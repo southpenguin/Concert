@@ -1,16 +1,23 @@
 /**
-User: Users' information
-Art: Artists' information
-Genre: All genres
-Follow: Users follow Users
-Fans: Users follow Artists
-Location: Detialed location information
-Concert: Concerts information
-Like: Users like what kinds of genres of music
-Have: Artists have what kinds of genres
-Attend: Users attend to which concert
-List: Lists created by users that for concerts recommandation
-FollowList: Relations of users follow which lists
+* Created by Xin He
+* Initiated on 11/05/2014
+* Revision 1
+* Project for CS6083 2014Fall
+* Copyright belongs to Xin He
+* 
+* 
+* User: Users' information
+* Art: Artists' information
+* Genre: All genres
+* Follow: Users follow Users
+* Fans: Users follow Artists
+* Location: Detialed location information
+* Concert: Concerts information
+* Like: Users like what kinds of genres of music
+* Have: Artists have what kinds of genres
+* Attend: Users attend to which concert
+* List: Lists created by users that for concerts recommandation
+* FollowList: Relations of users follow which lists
 */
 
 create table User (
