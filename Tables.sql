@@ -64,6 +64,7 @@ create table Fans (
 
 create table Location(
 	lid int(10),
+	lname var(20),
 	lnumber int(8),
 	street1 var(40),
 	street2 var(40),
