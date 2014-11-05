@@ -1,7 +1,7 @@
 CREATE TABLE User (
-	cid int(10),
-	cname varchar(40),
-	caddress varchar(40),
+	uid int(10),
+	ufname varchar(20),
+	ulname varchar(20),
+	uemail varchar(40),
 	cphone varchar(10),
-	balance int(4),
-	primary key (cid));
+	primary key (uid));
