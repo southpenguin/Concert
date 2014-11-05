@@ -1,20 +1,20 @@
 create table User (
 	uid int(10),
+	upassword varchar(20),
 	ufname varchar(20),
 	ulname varchar(20),
 	uemail varchar(40),
-	cphone varchar(10),
-	uname(ufname + " " + ulname),
+	uphone varchar(10),
 	primary key (uid)
 );
 
 create table Art (
 	aid int(10),
+	apassword varchar(20),
 	afname varchar(20),
 	alname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
-	aname(afname + " " + alname),
 	primary key (aid)
 );
 
@@ -56,6 +56,7 @@ create table Concert (
 	time int(4),
 	price decimal(7,2),
 	location int(10),
-	aval int(6),
+	capacity int(6),
+	available int(6),
 	foreign key (location) references Location(lid)
 );
