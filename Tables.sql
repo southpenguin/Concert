@@ -2,7 +2,6 @@
 * Created by Xin He
 * Initiated on 11/05/2014
 * Revision 1
-* Project for CS6083 2014Fall
 * Copyright belongs to Xin He
 * 
 * 
