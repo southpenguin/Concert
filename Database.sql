@@ -4,4 +4,5 @@ CREATE TABLE User (
 	ulname varchar(20),
 	uemail varchar(40),
 	cphone varchar(10),
+	uname(ufname + " " + ulname),
 	primary key (uid));
