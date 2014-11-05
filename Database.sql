@@ -37,3 +37,25 @@ create table Fans (
 	foreign key (fan) references User(uid),
 	foreign key (follow) references Art(aid),
 );
+
+create table Location(
+	lid int(10),
+	lnumber int(8),
+	street1 var(40),
+	street2 var(40),
+	city var(30),
+	state var(2),
+	zip int(5),
+	primary key (lid)
+);
+
+
+create table Concert (
+	cname var(40),
+	date int(8),
+	time int(4),
+	price decimal(7,2),
+	location int(10),
+	aval int(6),
+	foreign key (location) references Location(lid)
+);
