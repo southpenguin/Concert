@@ -1,7 +1,7 @@
 /**
 * Created by Xin He
-* Initiated on 11/05/2014
-* Revision 1
+* Initiated on 11/05/2014 Revision 1
+* Modified on 11/09/2014 Revision 2
 * 
 * 
 * User: Users' information
