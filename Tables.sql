@@ -2,7 +2,6 @@
 * Created by Xin He
 * Initiated on 11/05/2014
 * Revision 1
-* Copyright belongs to Xin He
 * 
 * 
 * User: Users' information
