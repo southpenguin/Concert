@@ -42,7 +42,7 @@ create table Art (
 
 create table Genre (
 	gid int(2),
-	ggenre var(20),
+	ggenre varchar(20),
 	primary key (gid)
 );
 
@@ -62,12 +62,12 @@ create table Fans (
 
 create table Location(
 	lid int(10),
-	lname var(20),
+	lname varchar(20),
 	lnumber int(8),
-	street1 var(40),
-	street2 var(40),
-	city var(30),
-	state var(2),
+	street1 varchar(40),
+	street2 varchar(40),
+	city varchar(30),
+	state varchar(2),
 	zip int(5),
 	primary key (lid)
 );
@@ -75,7 +75,7 @@ create table Location(
 
 create table Concert (
 	cid int(10),
-	cname var(40),
+	cname varchar(40),
 	date int(8),
 	time int(4),
 	price decimal(7,2),
@@ -106,7 +106,7 @@ create table Attend (
 	auid int(10),
 	acid int(10),
 	rate int(1),
-	review var(500),
+	review varchar(500),
 	foreign key (auid) references User(uid),
 	foreign key (acid) references Concert(cid)
 );
