@@ -26,7 +26,7 @@ create table User (
 	ulname varchar(20),
 	uemail varchar(40),
 	ucity varchar(20),
-	uphone varchar(10),
+	uphone char(10),
 	primary key (uid)
 );
 
@@ -67,7 +67,7 @@ create table Location(
 	street1 varchar(40),
 	street2 varchar(40),
 	city varchar(30),
-	state varchar(2),
+	state char(2),
 	zip int(5),
 	primary key (lid)
 );
