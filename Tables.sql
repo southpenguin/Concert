@@ -50,14 +50,14 @@ create table Follow (
 	followee int(10),
 	follower int(10),
 	foreign key (follower) references User(uid),
-	foreign key (followee) references User(uid),
+	foreign key (followee) references User(uid)
 );
 
 create table Fans (
 	fan int(10),
 	follow int(10),
 	foreign key (fan) references User(uid),
-	foreign key (follow) references Art(aid),
+	foreign key (follow) references Art(aid)
 );
 
 create table Location(
@@ -88,7 +88,7 @@ create table Concert (
 	foreign key (location) references Location(lid)
 );
 
-create table Like (
+create table Likes (
 	luid int(10),
 	lgenre int(2),
 	foreign key (luid) references User(uid),
@@ -111,23 +111,23 @@ create table Attend (
 	foreign key (acid) references Concert(cid)
 );
 
-create table List (
+create table Lists (
 	listid int(10),
 	luid int(10),
-	primary key (auid),
+	primary key (listid),
 	foreign key (luid) references User(uid)
 );
 
 create table Content (
 	clistid int(10),
 	ccid int(10),
-	foreign key (clistid) references List(listid),
+	foreign key (clistid) references Lists(listid),
 	foreign key (ccid) references Concert(cid)
 );
 
 create table FollowList (
 	flistid int(10),
 	fluid int(10),
-	foreign key (flistid) references List(listid),
+	foreign key (flistid) references Lists(listid),
 	foreign key (fluid) references User(uid)
 );
