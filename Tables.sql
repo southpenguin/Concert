@@ -1,8 +1,6 @@
 /**
 * Created by Xin He
-* Initiated on 11/05/2014 Revision 1
-* Modified on 11/09/2014 Revision 2
-* 
+* Revision 3 on 11/19/2014
 * 
 * User: Users' information
 * Art: Artists' information
