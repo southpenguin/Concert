@@ -30,8 +30,7 @@ create table User (
 create table Art (
 	aid varchar(20),
 	apassword varchar(20),
-	afname varchar(20),
-	alname varchar(20),
+	aname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
 	primary key (aid)
@@ -127,4 +126,11 @@ create table FollowList (
 	fluid varchar(20),
 	foreign key (flistid) references Lists(listid),
 	foreign key (fluid) references User(uid)
+);
+
+create table Hold (
+	haid varchar(20),
+	hcid int(10),
+	foreign key (haid) references Art(aid),
+	foreign key (hcid) references Concert(cid)
 );
