@@ -47,6 +47,7 @@ create table Art (
 	artname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
+	aregtime datetime,
 	primary key (aid)
 );
 
