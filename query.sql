@@ -28,6 +28,14 @@ FROM Likes, Genre
 WHERE Likes.lgenre = Genre.gid
 	AND Likes.luid = 'XXXXX';
 
+-- Display all concert is going to be held in the user's city
+SELECT cname
+FROM Concert, Location, User
+WHERE User.ucity = Location.city
+	AND Concert.location = Location.lid
+	AND Concert.holdtime > timestamp
+	AND User.uid = 'XXXXXX';
+
 -- return all the users names following the list XXXXX
 SELECT ufname, ulname 
 FROM Lists,User
