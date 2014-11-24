@@ -17,17 +17,19 @@
 
 Drop table IF EXISTS `Concert`.Have;
 Drop table IF EXISTS `Concert`.Fans;
-DROP TABLE IF EXISTS `Concert`.Art ;
 Drop table IF EXISTS `Concert`.Attend;
 Drop table IF EXISTS `Concert`.Likes;
 Drop table IF EXISTS `Concert`.Content;
-Drop table IF EXISTS `Concert`.Concert;
 Drop table IF EXISTS `Concert`.Follow;
-Drop table IF EXISTS `Concert`.Location;
 Drop table IF EXISTS `Concert`.Genre;
-Drop table IF EXISTS `Concert`.Lists;
-Drop table IF EXISTS `Concert`.User;
 Drop table IF EXISTS `Concert`.Content;
+Drop table IF EXISTS `Concert`.FollowList;
+Drop table IF EXISTS `Concert`.Hold;
+Drop table IF EXISTS `Concert`.Lists;
+Drop table IF EXISTS `Concert`.Concert;
+Drop table IF EXISTS `Concert`.Location;
+DROP TABLE IF EXISTS `Concert`.Art ;
+Drop table IF EXISTS `Concert`.User;
 
 create table User (
 	uid varchar(20),
