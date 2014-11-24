@@ -25,3 +25,11 @@ FROM Genre, Have, Art
 WHERE Genre.gid = Have.hgenre 
 	AND Have.haid = Art.aid
 	AND ggenre = 'XXXXX';
+
+-- return all artists name that have the same genre type that the user with a uid='XXXXXX' likes
+SELECT aname
+FROM User, Likes, Have, Art
+WHERE User.uid = Likes.luid
+	AND Likes.lgenre = Have.hgenre
+	AND Have.haid = Art.aid
+	AND User.uid = 'XXXXX';
