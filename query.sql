@@ -3,14 +3,14 @@
 * timestamp is the time when the user signed up
 */
 INSERT INTO User
-VALUES('username','password','Firstname','Lastname','Email@Address','City','10digitNo.', timestamp);
+VALUES('username','password','Firstname','Lastname','Email@Address','City','10digitNo.', current_timestamp);
 
 /*
 * When an artist signing up, create a new tuple in Art talbe, and insert the following information into the table
 * timestamp is the time when the artist signed up
 */
 INSERT INTO Art
-VALUES('artusername','password','artistname','Email@Address','artistlink', timestamp);
+VALUES('artusername','password','artistname','Email@Address','artistlink', current_timestamp);
 
 /*
 * When a user following someother user
@@ -19,13 +19,13 @@ VALUES('artusername','password','artistname','Email@Address','artistlink', times
 * timestamp is the time when the follower started to follow ther followee
 */
 INSERT INTO Follow
-VALUES('followeeid','followerid', timestamp);
+VALUES('followeeid','followerid', current_timestamp);
 
 /*
 * When a user follow an artist, a new tuple will be created in the Fans table
 */
 INSERT INTO Fans
-VALUES('userid','artid', timestamp);
+VALUES('userid','artid', current_timestamp);
 
 /*
 * When an artist creates a concert, a new tuple will be created in teh Concert table and the following information will be added
@@ -34,7 +34,7 @@ VALUES('userid','artid', timestamp);
 * when creating, the avaialability should be set equal to capacity
 */
 INSERT INTO Concert
-VALUES(123/*concertid*/, 'concertName', timestamp/*future time*/, 50.00/*price*/, 456/*locationid*/, 500, 100);
+VALUES(123/*concertid*/, 'concertName', current_timestamp/*future time*/, 50.00/*price*/, 456/*locationid*/, 500, 100);
 
 /*
 * When a user is going to attend a concert, a new tuple will be created in Attend table
@@ -43,7 +43,7 @@ VALUES(123/*concertid*/, 'concertName', timestamp/*future time*/, 50.00/*price*/
 * timestamp recorded the time when insertion happened
 */
 INSERT INTO Attend
-VALUES('userid',123/*concertid*/, null, null, timestamp);
+VALUES('userid',123/*concertid*/, null, null, current_timestamp);
 
 /*
 * When a user is rating a concert
@@ -70,7 +70,7 @@ SELECT cname
 FROM Concert, Location, User
 WHERE User.ucity = Location.city
 	AND Concert.location = Location.lid
-	AND Concert.holdtime > timestamp
+	AND Concert.holdtime > current_timestamp
 	AND User.uid = 'XXXXXX';
 
 
