@@ -1,3 +1,33 @@
+-- When a user signing up
+INSERT INTO User
+VALUES('username','password','Firstname','Lastname','Email@Address','City','10digitNo.', timestamp);
+
+-- When an artist signing up
+INSERT INTO Art
+VALUES('artusername','password','artistname','Email@Address','artistlink', timestamp);
+
+-- When a user following someother user
+INSERT INTO Follow
+VALUES('followeeid','followerid', timestamp);
+
+-- When a user follow an artist
+INSERT INTO Fans
+VALUES('userid','artid', timestamp);
+
+-- Artist create a concert
+INSERT INTO Concert
+VALUES(123/*concertid*/, 'concertName', timestamp/*future time*/, 50.00/*price*/, 123/*locationid*/, 500, 100);
+
+-- When a user rates a concert
+INSERT INTO Attend
+VALUES('userid',123/*concertid*/, 9/*rating*/, 'review', timestamp);
+
+-- Display all genre types that the user with a uid XXXXX likes
+SELECT ggenre
+FROM Likes, Genre
+WHERE Likes.lgenre = Genre.gid
+	AND Likes.luid = 'XXXXX';
+
 -- return all the users names following the list XXXXX
 SELECT ufname, ulname 
 FROM Lists,User
