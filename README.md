@@ -9,3 +9,8 @@ Table.sql modifying history
   * Error correction, successfully run On MySQL
 * Modified on 11/19/2014
   * User.uid and Art.aid modification, using username varchar(20) instead of id number int(10), related foreign key references also modified. Successfully run on MySQL.
+* Modified on 11/24/2014
+  * Deleted Art.afname and Art.alname from the schema.
+  * Added Art.aname, using full name of the artist/band from the schema.
+  * Added new table Hold, with association of Concert and Art with many to many relations.
+  * Added SampleData.sql, put some sample data in.
