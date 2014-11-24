@@ -1,6 +1,5 @@
 /**
 * Created by Xin He
-* Revision 3 on 11/19/2014
 * 
 * User: Users' information
 * Art: Artists' information
@@ -16,6 +15,20 @@
 * FollowList: Relations of users follow which lists
 */
 
+Drop table IF EXISTS `Concert`.Have;
+Drop table IF EXISTS `Concert`.Fans;
+DROP TABLE IF EXISTS `Concert`.Art ;
+Drop table IF EXISTS `Concert`.Attend;
+Drop table IF EXISTS `Concert`.Likes;
+Drop table IF EXISTS `Concert`.Content;
+Drop table IF EXISTS `Concert`.Concert;
+Drop table IF EXISTS `Concert`.Follow;
+Drop table IF EXISTS `Concert`.Location;
+Drop table IF EXISTS `Concert`.Genre;
+Drop table IF EXISTS `Concert`.Lists;
+Drop table IF EXISTS `Concert`.User;
+Drop table IF EXISTS `Concert`.Content;
+
 create table User (
 	uid varchar(20),
 	upassword varchar(20),
@@ -23,14 +36,15 @@ create table User (
 	ulname varchar(20),
 	uemail varchar(40),
 	ucity varchar(20),
-	uphone char(10),
+	uphone varchar(10),
+	regtime datetime,
 	primary key (uid)
 );
 
 create table Art (
 	aid varchar(20),
 	apassword varchar(20),
-	aname varchar(20),
+	artname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
 	primary key (aid)
@@ -38,13 +52,14 @@ create table Art (
 
 create table Genre (
 	gid int(2),
-	ggenre varchar(20),
+	ggenre char(20),
 	primary key (gid)
 );
 
 create table Follow (
 	followee varchar(20),
 	follower varchar(20),
+	foltime datetime,
 	foreign key (follower) references User(uid),
 	foreign key (followee) references User(uid)
 );
@@ -52,13 +67,14 @@ create table Follow (
 create table Fans (
 	fan varchar(20),
 	follow varchar(20),
+	fantime datetime,
 	foreign key (fan) references User(uid),
 	foreign key (follow) references Art(aid)
 );
 
 create table Location(
 	lid int(10),
-	lname varchar(20),
+	lname char(20),
 	lnumber int(8),
 	street1 varchar(40),
 	street2 varchar(40),
@@ -72,15 +88,12 @@ create table Location(
 create table Concert (
 	cid int(10),
 	cname varchar(40),
-	date int(8),
-	time int(4),
+	holdtime datetime,
 	price decimal(7,2),
 	location int(10),
 	capacity int(6),
 	available int(6),
-	cgenre int(2),
 	primary key (cid),
-	foreign key (cgenre) references Genre(gid),
 	foreign key (location) references Location(lid)
 );
 
@@ -103,6 +116,7 @@ create table Attend (
 	acid int(10),
 	rate int(1),
 	review varchar(500),
+	reviewtime datetime,
 	foreign key (auid) references User(uid),
 	foreign key (acid) references Concert(cid)
 );
@@ -110,6 +124,7 @@ create table Attend (
 create table Lists (
 	listid int(10),
 	luid varchar(20),
+	moditime datetime,
 	primary key (listid),
 	foreign key (luid) references User(uid)
 );
@@ -124,13 +139,14 @@ create table Content (
 create table FollowList (
 	flistid int(10),
 	fluid varchar(20),
+	folltime datetime,
 	foreign key (flistid) references Lists(listid),
 	foreign key (fluid) references User(uid)
 );
 
 create table Hold (
 	haid varchar(20),
-	hcid int(10),
+	hcid int(20),
 	foreign key (haid) references Art(aid),
 	foreign key (hcid) references Concert(cid)
 );
