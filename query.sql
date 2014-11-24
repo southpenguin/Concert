@@ -33,3 +33,11 @@ WHERE User.uid = Likes.luid
 	AND Likes.lgenre = Have.hgenre
 	AND Have.haid = Art.aid
 	AND User.uid = 'XXXXX';
+
+-- return all the artists name that the user whith a uid XXXXX is following lists that having concerts	
+SELECT aname
+FROM Art, Lists, Content, Hold
+WHERE Lists.listid = Content.clistid
+	AND Content.ccid =  Hold.hcid
+    AND Hold.haid = Art.aid
+	AND Lists.luid = 'XXXXX';
