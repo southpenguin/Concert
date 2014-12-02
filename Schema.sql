@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS Art;
 DROP TABLE IF EXISTS User;
 
 CREATE TABLE User (
-	uid int(10),
+	uid int(10) AUTO_INCREMENT,
 	username varchar(20),
 	upassword varchar(20),
 	ufname varchar(20),
@@ -46,9 +46,8 @@ CREATE TABLE User (
 	PRIMARY KEY (uid)
 );
 
-
 CREATE TABLE Art (
-	aid int(10),
+	aid int(10) AUTO_INCREMENT,
 	auname varchar(20),
 	apassword varchar(20),
 	artname varchar(20),
@@ -59,13 +58,13 @@ CREATE TABLE Art (
 );
 
 CREATE TABLE Genre (
-	gid int(2),
+	gid int(2) AUTO_INCREMENT,
 	ggenre varchar(20),
 	PRIMARY KEY (gid)
 );
 
 CREATE TABLE SubGenre(
-	sgid int(4),
+	sgid int(4) AUTO_INCREMENT,
 	ggid int(2),
 	sggenre varchar(20),
 	PRIMARY KEY (sgid, ggid),
@@ -89,7 +88,7 @@ CREATE TABLE Fans (
 );
 
 CREATE TABLE Location(
-	lid int(10),
+	lid int(10) AUTO_INCREMENT,
 	lname varchar(20),
 	lnumber int(8),
 	street1 varchar(40),
@@ -101,7 +100,7 @@ CREATE TABLE Location(
 );
 
 CREATE TABLE Concert (
-	cid int(10),
+	cid int(10) AUTO_INCREMENT,
 	cname varchar(40),
 	holdtime datetime,
 	price decimal(7,2),
