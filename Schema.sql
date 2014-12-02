@@ -15,24 +15,26 @@
 * FollowList: Relations of users follow which lists
 */
 
-Drop table IF EXISTS Concert.Have;
-Drop table IF EXISTS Concert.Fans;
-Drop table IF EXISTS Concert.Attend;
-Drop table IF EXISTS Concert.Likes;
-Drop table IF EXISTS Concert.Content;
-Drop table IF EXISTS Concert.Follow;
-Drop table IF EXISTS Concert.Genre;
-Drop table IF EXISTS Concert.Content;
-Drop table IF EXISTS Concert.FollowList;
-Drop table IF EXISTS Concert.Hold;
-Drop table IF EXISTS Concert.Lists;
-Drop table IF EXISTS Concert.Concert;
-Drop table IF EXISTS Concert.Location;
-DROP TABLE IF EXISTS Concert.Art ;
-Drop table IF EXISTS Concert.User;
+DROP TABLE IF EXISTS Have;
+DROP TABLE IF EXISTS Fans;
+DROP TABLE IF EXISTS Attend;
+DROP TABLE IF EXISTS Likes;
+DROP TABLE IF EXISTS Content;
+DROP TABLE IF EXISTS Follow;
+DROP TABLE IF EXISTS SubGenre;
+DROP TABLE IF EXISTS Genre;
+DROP TABLE IF EXISTS Content;
+DROP TABLE IF EXISTS FollowList;
+DROP TABLE IF EXISTS Hold;
+DROP TABLE IF EXISTS Lists;
+DROP TABLE IF EXISTS Concert;
+DROP TABLE IF EXISTS Location;
+DROP TABLE IF EXISTS Art;
+DROP TABLE IF EXISTS User;
 
-create table User (
-	uid varchar(20),
+CREATE TABLE User (
+	uid int(10),
+	username varchar(20),
 	upassword varchar(20),
 	ufname varchar(20),
 	ulname varchar(20),
@@ -40,55 +42,65 @@ create table User (
 	ucity varchar(20),
 	uphone varchar(10),
 	regtime datetime,
-	primary key (uid)
+	uscore int(3),
+	PRIMARY KEY (uid)
 );
 
-create table Art (
-	aid varchar(20),
+
+CREATE TABLE Art (
+	aid int(10),
+	auname varchar(20),
 	apassword varchar(20),
 	artname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
 	aregtime datetime,
-	primary key (aid)
+	PRIMARY KEY (aid)
 );
 
-create table Genre (
+CREATE TABLE Genre (
 	gid int(2),
-	ggenre char(20),
-	primary key (gid)
+	ggenre varchar(20),
+	PRIMARY KEY (gid)
 );
 
-create table Follow (
-	followee varchar(20),
-	follower varchar(20),
+CREATE TABLE SubGenre(
+	sgid int(4),
+	ggid int(2),
+	sggenre varchar(20),
+	PRIMARY KEY (sgid, ggid),
+	FOREIGN KEY (ggid) REFERENCES Genre(gid)
+);
+
+CREATE TABLE Follow (
+	followee int(10),
+	follower int(10),
 	foltime datetime,
-	foreign key (follower) references User(uid),
-	foreign key (followee) references User(uid)
+	FOREIGN KEY (follower) REFERENCES User(uid),
+	FOREIGN KEY (followee) REFERENCES User(uid)
 );
 
-create table Fans (
-	fan varchar(20),
-	follow varchar(20),
+CREATE TABLE Fans (
+	fan int(10),
+	follow int(10),
 	fantime datetime,
-	foreign key (fan) references User(uid),
-	foreign key (follow) references Art(aid)
+	FOREIGN KEY (fan) REFERENCES User(uid),
+	FOREIGN KEY (follow) REFERENCES Art(aid)
 );
 
-create table Location(
+CREATE TABLE Location(
 	lid int(10),
-	lname char(20),
+	lname varchar(20),
 	lnumber int(8),
 	street1 varchar(40),
 	street2 varchar(40),
 	city varchar(30),
 	state char(2),
 	zip int(5),
-	primary key (lid)
+	PRIMARY KEY (lid)
 );
 
-
-create table Concert (
+CREATE TABLE Concert (
 	cid int(10),
 	cname varchar(40),
 	holdtime datetime,
@@ -96,60 +108,60 @@ create table Concert (
 	location int(10),
 	capacity int(6),
 	available int(6),
-	primary key (cid),
-	foreign key (location) references Location(lid)
+	PRIMARY KEY (cid),
+	FOREIGN KEY (location) REFERENCES Location(lid)
 );
 
-create table Likes (
-	luid varchar(20),
+CREATE TABLE Likes (
+	luid int(10),
 	lgenre int(2),
-	foreign key (luid) references User(uid),
-	foreign key (lgenre) references Genre(gid)
+	FOREIGN KEY (luid) REFERENCES User(uid),
+	FOREIGN KEY (lgenre) REFERENCES Genre(gid)
 );
 
-create table Have (
-	haid varchar(20),
+CREATE TABLE Have (
+	haid int(10),
 	hgenre int(2),
-	foreign key (haid) references Art(aid),
-	foreign key (hgenre) references Genre(gid)	
+	FOREIGN KEY (haid) REFERENCES Art(aid),
+	FOREIGN KEY (hgenre) REFERENCES Genre(gid)	
 );
 
-create table Attend (
-	auid varchar(20),
+CREATE TABLE Attend (
+	auid int(10),
 	acid int(10),
 	rate int(1),
 	review varchar(500),
 	reviewtime datetime,
-	foreign key (auid) references User(uid),
-	foreign key (acid) references Concert(cid)
+	FOREIGN KEY (auid) REFERENCES User(uid),
+	FOREIGN KEY (acid) REFERENCES Concert(cid)
 );
 
-create table Lists (
+CREATE TABLE Lists (
 	listid int(10),
-	luid varchar(20),
+	luid int(10),
 	moditime datetime,
-	primary key (listid),
-	foreign key (luid) references User(uid)
+	PRIMARY KEY (listid),
+	FOREIGN KEY (luid) REFERENCES User(uid)
 );
 
-create table Content (
+CREATE TABLE Content (
 	clistid int(10),
 	ccid int(10),
-	foreign key (clistid) references Lists(listid),
-	foreign key (ccid) references Concert(cid)
+	FOREIGN KEY (clistid) REFERENCES Lists(listid),
+	FOREIGN KEY (ccid) REFERENCES Concert(cid)
 );
 
-create table FollowList (
+CREATE TABLE FollowList (
 	flistid int(10),
-	fluid varchar(20),
+	fluid int(10),
 	folltime datetime,
-	foreign key (flistid) references Lists(listid),
-	foreign key (fluid) references User(uid)
+	FOREIGN KEY (flistid) REFERENCES Lists(listid),
+	FOREIGN KEY (fluid) REFERENCES User(uid)
 );
 
-create table Hold (
-	haid varchar(20),
+CREATE TABLE Hold (
+	haid int(10),
 	hcid int(20),
-	foreign key (haid) references Art(aid),
-	foreign key (hcid) references Concert(cid)
+	FOREIGN KEY (haid) REFERENCES Art(aid),
+	FOREIGN KEY (hcid) REFERENCES Concert(cid)
 );
