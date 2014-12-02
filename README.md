@@ -19,4 +19,4 @@ Table.sql modifying history
 * 12/1/2014
   * Modify schema, add SubGenre table and add all uid as intergers.
   * Add AUTO_INCREMENT statements into the ID fields.
-  * Login.php file initialed
+  * Several php files created, including connectDB, index, login, SignUp
