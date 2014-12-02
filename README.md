@@ -16,3 +16,7 @@ Table.sql modifying history
   * Added SampleData.sql, put some sample data in.
   * Finished the [ER diagram](https://www.lucidchart.com/documents/edit/187a54c4-6238-45e4-8a26-9d68538fc38c).
   * Add datestamp to the related table into the schema, also write drop table if exists, in order to modify schema tables in the future.
+* 12/1/2014
+  * Modify schema, add SubGenre table and add all uid as intergers.
+  * Add AUTO_INCREMENT statements into the ID fields.
+  * Login.php file initialed
