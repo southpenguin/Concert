@@ -19,4 +19,4 @@ Table.sql modifying history
 * 12/1/2014
   * Modify schema, add ```SubGenre``` table and add all uid as intergers.
   * Add ```AUTO_INCREMENT``` statements into the ```ID```s fields.
-  * Several php files created, including [```connectDB```](https://github.com/southpenguin/Concert/blob/master/php/connectDB.php), [```index```](https://github.com/southpenguin/Concert/blob/master/php/index.php), [```login```](https://github.com/southpenguin/Concert/blob/master/php/login.php), [```SignUp```](https://github.com/southpenguin/Concert/blob/master/php/SignUp.php)
+  * Several php files created, including [```connectDB```](https://github.com/southpenguin/Concert/blob/master/php/connectDB.php), [```index```](https://github.com/southpenguin/Concert/blob/master/php/index.php), [```login```](https://github.com/southpenguin/Concert/blob/master/php/login.php), [```SignUp```](https://github.com/southpenguin/Concert/blob/master/php/SignUp.php). For use, create a ```includes``` folder and put ```connectDB``` and ```SignUp``` into the folder, or just modify the location of  ```SignUp.php``` in  ```login.php``` file.
