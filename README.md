@@ -9,7 +9,7 @@ Table.sql modifying history
 * 11/09/2014 
   * Error correction, successfully run On MySQL
 * 11/19/2014
-  * ~~```User.uid``` and ```Art.aid``` modification, using ```username varchar(20```) instead of ```id number int(10)```, related foreign key references also modified. ~~ Successfully run on MySQL.
+  * ~~```User.uid``` and ```Art.aid``` modification, using ```username varchar(20```) instead of ```id number int(10)```, related foreign key references also modified.~~ Successfully run on MySQL.
 * 11/24/2014
   * Deleted ```Art.afname``` and ```Art.alname``` and added ```Art.aname```, using full name of the artist/band from the schema.
   * Added new table ```Hold```, with association of ```Concert``` and ```Art``` with many to many relations.
