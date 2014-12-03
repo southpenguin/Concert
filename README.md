@@ -2,6 +2,12 @@ Concert
 ========
 
 The concert social website for database project.
+* 12/2/2014
+  * All php files update, including [```index.php```](https://github.com/southpenguin/Concert/blob/master/php/index.php), [```entry.php```](https://github.com/southpenguin/Concert/blob/master/php/entry.php)(the old ```login.php```), [```includes/SignUp.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/SignUp.php), [```includes/Login.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Login.php)(new file, only function in log in, not real page).
+  * New php page files added, including [```artists.php```](https://github.com/southpenguin/Concert/blob/master/php/artists.php), [```concerts.php```](https://github.com/southpenguin/Concert/blob/master/php/concerts.php), [```connection.php```](https://github.com/southpenguin/Concert/blob/master/php/connection.php), [```profile.php```](https://github.com/southpenguin/Concert/blob/master/php/profile.php). All files need further update.
+  * CSS files added, including [```CSS/style.css```](https://github.com/southpenguin/Concert/blob/master/php/css/style.css), [```CSS/profile.css```](https://github.com/southpenguin/Concert/blob/master/php/css/profile.css).
+  * [```includes```](https://github.com/southpenguin/Concert/tree/master/php/includes) folder stores the functional php files. They are not real webpages containing any information, but rather functions in log in or sign up, etc.
+  *  [```Schema.sql ```](https://github.com/southpenguin/Concert/blob/master/sql/Schema.sql) updated, added ```lastlogin datetime``` in ```User``` table, in order to further calculate the ```User.uscore```. Deleted ```aregtime datetime``` from ```Art``` table.
 * 12/1/2014
   * Modify schema, add ```SubGenre``` table and add all uid as intergers.
   * Add ```AUTO_INCREMENT``` statements into the ```ID```s fields.
