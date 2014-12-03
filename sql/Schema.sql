@@ -42,6 +42,7 @@ CREATE TABLE User (
 	ucity varchar(20),
 	uphone varchar(10),
 	regtime datetime,
+	lastlogin datetime,
 	uscore int(3),
 	PRIMARY KEY (uid)
 );
