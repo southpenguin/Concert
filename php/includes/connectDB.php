@@ -1,4 +1,7 @@
 <?php
+//wen's host
+//$mysqli = new mysqli("localhost", "admin", "admin", "project");
+//he's host
 $mysqli = new mysqli("localhost", "root", "root", "Concert");
 
 /* check connection */
