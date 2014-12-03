@@ -1,6 +1,4 @@
 /**
-* Created by Xin He
-* 
 * User: Users' information
 * Art: Artists' information
 * Genre: All genres
