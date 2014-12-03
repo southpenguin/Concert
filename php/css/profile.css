@@ -1,0 +1,31 @@
+#profile {
+    width:360px;
+    height:500px;
+    float: left;
+    border: 1px solid #DDDDDD;
+}
+
+.center ul {
+    position: relative;
+    padding-top: 8px;
+    border-bottom: none;
+    list-style: none;
+}
+
+.center li {
+    color: #333333;
+    font-size: 14px;
+    list-style: none;
+}
+
+.center ul li {
+    width:280px;
+    border: 1px solid #DDDDDD;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#profileusername{
+    font-style: italic;
+}
