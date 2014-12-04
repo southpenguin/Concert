@@ -53,10 +53,10 @@
     }
     else {
         $mysqli->query("UPDATE User SET uscore = uscore + (CURRENT_TIMESTAMP - lastlogin)/500000 WHERE username = '$username'");
-        if ($stmt = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore FROM User WHERE username = ? AND upassword = ?;")){
+        if ($stmt = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore, ulink, ubio FROM User WHERE username = ? AND upassword = ?;")){
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
-        $stmt->bind_result($uid, $rusername, $ufname, $ulname, $uemail, $ucity, $uphone, $regtime, $lastlogin, $uscore);
+        $stmt->bind_result($uid, $rusername, $ufname, $ulname, $uemail, $ucity, $uphone, $regtime, $lastlogin, $uscore, $ulink, $ubio);
         $stmt->store_result();
         if ($stmt->num_rows == 1){
             echo "You have loged in successfully.";
@@ -71,13 +71,14 @@
                 $_SESSION["RegTime"] = $regtime;
                 $_SESSION["LastLogin"] = $lastlogin;
                 $_SESSION["Score"] = $uscore;
+                $_SESSION["Link"] = $ulink;
+                $_SESSION["Bio"] = $ubio;
                 
                 session_write_close();
             }
-            echo "Page will be redirected to homepage in 2 seconds.<br>";
             ?>
             <script type="text/javascript"> 
-                setTimeout(function(){document.location = "/Concert/index.php"}, 2200);
+                document.location = "/Concert/index.php";
             </script>
             <?php
         }
