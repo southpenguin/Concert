@@ -42,6 +42,8 @@ CREATE TABLE User (
 	regtime datetime,
 	lastlogin datetime,
 	uscore int(3),
+	ulink varchar(200),
+	ubio varchar(500),
 	PRIMARY KEY (uid)
 );
 
@@ -52,6 +54,8 @@ CREATE TABLE Art (
 	artname varchar(20),
 	aemail varchar(40),
 	asite varchar(100),
+	alink varchar(200),
+	abio varchar(500),
 	PRIMARY KEY (aid)
 );
 
@@ -105,6 +109,7 @@ CREATE TABLE Concert (
 	location int(10),
 	capacity int(6),
 	available int(6),
+	clink varchar(200),
 	PRIMARY KEY (cid),
 	FOREIGN KEY (location) REFERENCES Location(lid)
 );
