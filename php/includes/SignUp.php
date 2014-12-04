@@ -77,14 +77,14 @@
         </script>
         <?php
     }  else {
-        if ($stmt = $mysqli->prepare("insert into User values ( 'NULL', '$username', '$pw', '$firstname', '$lastname', '$email', '$city', '$phone', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0)")){
+        if ($stmt = $mysqli->prepare("INSERT INTO User VALUES ( 'NULL', '$username', '$pw', '$firstname', '$lastname', '$email', '$city', '$phone', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, 'default.jpg', null)")){
             $stmt->execute();
             $stmt->close();
         }
-        if ($stmt = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore FROM User WHERE username = ?;")){
+        if ($stmt = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore, ulink, ubio FROM User WHERE username = ?;")){
             $stmt->bind_param("s", $username);
             $stmt->execute();
-            $stmt->bind_result($uid, $rusername, $ufname, $ulname, $uemail, $ucity, $uphone, $regtime, $lastlogin, $uscore);
+            $stmt->bind_result($uid, $rusername, $ufname, $ulname, $uemail, $ucity, $uphone, $regtime, $lastlogin, $uscore, $ulink, $ubio);
             $stmt->store_result();
             if ($stmt->num_rows == 1){
                 while ($stmt->fetch()) {
@@ -98,6 +98,8 @@
                     $_SESSION["RegTime"] = $regtime;
                     $_SESSION["LastLogin"] = $lastlogin;
                     $_SESSION["Score"] = $uscore;
+                    $_SESSION["Link"] = $ulink;
+                    $_SESSION["Bio"] = $ubio;
                 }
             }
             $stmt->close();
