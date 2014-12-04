@@ -1,3 +1,67 @@
+#potrait {
+    width: 200px;
+    height: 200px;
+    float: left;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#profile {
+    margin-left: 250px;
+    width: 600px;
+    height: 198px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#bio ul {
+    margin-top: 10px;
+    text-align: left;
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    border: none;
+}
+
+#bio ul h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#bio ul li {
+    margin-top: 6px;
+    color: #888888;
+    font-size: 14px;
+    display: normal;
+    display: list-item;
+    list-style: none;
+}
+
+#bio #profileusername{
+    font-style: italic;
+}
+
+#bio #reg{
+    color: #333333;
+    font-size: 12px;
+}
+
+#bio #lastlg{
+    color: #333333;
+    font-size: 12px;
+}
+
+#biocontent{
+    position: absolute;
+    top: 130px;
+    margin-left: 280px;
+    width: 300px;
+    height: 160px;
+    border: 1px solid #DDDDDD;
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 15px;
+}
+
+/*
 #profile {
     width:360px;
     height:500px;
@@ -25,7 +89,4 @@
     margin-bottom: 10px;
     font-weight: bold;
 }
-
-#profileusername{
-    font-style: italic;
-}
+*/
