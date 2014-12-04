@@ -4,17 +4,18 @@ session_start();
 if (!isset($_SESSION["UID"])) {
     header("Location:entry.php");
 } else {
-    $user = $_SESSION["UID"];
+    $uid = $_SESSION["UID"];
     $username = $_SESSION["Username"];
     $ufname = $_SESSION["FirstName"];
     $ulname = $_SESSION["LastName"];
-    $ufname = $_SESSION["FirstName"];
     $uemail = $_SESSION["Email"];
     $ucity = $_SESSION["City"];
     $uphone = $_SESSION["Phone"];
     $regtime = $_SESSION["RegTime"];
     $lastlogin = $_SESSION["RegTime"]; 
     $uscore = $_SESSION["Score"];
+    $ulink = $_SESSION["Link"];
+    $ubio = $_SESSION["Bio"];
 }
 ?>
 
@@ -23,7 +24,7 @@ if (!isset($_SESSION["UID"])) {
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Home Page</title>
+        <title>Profile</title>
         <link rel ="stylesheet" href="css/style.css">
         <link rel ="stylesheet" href="css/profile.css">
     </head>
@@ -45,28 +46,38 @@ if (!isset($_SESSION["UID"])) {
                 </div>
             </div>
         </div>
-        <div class="center">
-            
-            <div class="box" id="profile">
-                <ul>
-                    <li>Welcome Back, <?php echo $ufname; ?></li>
-                    <li>Name: <?php echo $ufname." ".$ulname; ?></li>
-                    <li>Username: <span id="profileusername">@<?php echo $username; ?></span></li>
-                    <li>Email: <?php echo $uemail; ?></li>
-                    <li>City: <?php echo $ucity; ?></li>
-                    <li>Phone: <?php echo $uphone; ?></li>
-                    <li>Contribution Points: <?php echo $uscore; ?></li>
-                    <li>Last Login: <?php echo $lastlogin; ?></li>
-                    <li>Registered: <?php echo $regtime; ?></li>
-                    
-                </ul>
-
+        <div id="content">
+            <div class="center">
+            <div id="potrait">
+                <img src="Pictures/Users/<?php echo $ulink; ?>" width="200" height="200">
             </div>
+            <div id="profile">
+                
+                <div id="bio">
+                    <ul>
+                        <li><?php echo $ufname." ".$ulname; ?></li>
+                        <li id="profileusername">@<?php echo $username; ?></li>
+                        <li><img src="Pictures/Logos/score.png" width=10px height=10px> <?php echo $uscore; ?></li>
+                        <li><img src="Pictures/Logos/at.png" width=10px height=10px> <?php echo $ucity; ?></li>
+                        <li><?php echo $uemail; ?></li>
+                        <li><?php echo $uphone; ?></li>
+                        <li id="reg">Member since: <?php echo date("Y-m-d", strtotime($regtime)); ?></li>
+                        <li id="lastlg">Last log in: <?php echo date("Y-m-d", strtotime($lastlogin)); ?></li>
+                        
+                    </ul>
+                    <div id="biocontent">
+                        <?php echo $ubio; ?>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
             
             <div class="right">
                 
             </div>
 
-        </div>
+        
     </body>
 </html>
