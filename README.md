@@ -2,6 +2,11 @@ Concert
 ========
 
 The concert social website for database project.
+* 12/3/2014
+  * [```Schema.sql```](https://github.com/southpenguin/Concert/blob/master/sql/Schema.sql)update: ```ulink varchar(200)```, ```ubio varchar(200)``` are added into ```User``` table, ```alink varchar(200)```, ```abio varchar(500)``` are added into ```Art``` table, ```clink varchar(200)``` is added into ```Concert```table, to store the picture links and bio paragrahs. [```SampleData.sql```](https://github.com/southpenguin/Concert/blob/master/sql/SampleData.sql) update for those attributes.
+  * Several php files update: [```connection.php```](https://github.com/southpenguin/Concert/blob/master/php/connection.php), [```profile.php```](https://github.com/southpenguin/Concert/blob/master/php/profile.php), [```includes/SignUp.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/SignUp.php), [```includes/Login.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Login.php), [```CSS/profile.css```](https://github.com/southpenguin/Concert/blob/master/php/css/profile.css).
+  * Several files added: [```includes/Follow.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Follow.php), [```CSS/connection.css```](https://github.com/southpenguin/Concert/blob/master/php/css/connection.css).
+  * Pctures directory is added, in case to get a better view. ![alt tag](http://url/to/img.png)
 * 12/2/2014
   * All php files update, including [```index.php```](https://github.com/southpenguin/Concert/blob/master/php/index.php), [```entry.php```](https://github.com/southpenguin/Concert/blob/master/php/entry.php)(the old ```login.php```), [```includes/SignUp.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/SignUp.php), [```includes/Login.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Login.php)(new file, only function in log in, not real page).
   * New php page files added, including [```artists.php```](https://github.com/southpenguin/Concert/blob/master/php/artists.php), [```concerts.php```](https://github.com/southpenguin/Concert/blob/master/php/concerts.php), [```connection.php```](https://github.com/southpenguin/Concert/blob/master/php/connection.php), [```profile.php```](https://github.com/southpenguin/Concert/blob/master/php/profile.php). All files need further update.
