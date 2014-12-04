@@ -1,13 +1,13 @@
 
 -- User
-insert into user values(null,'aaa','123456','Peter','Allen','P.Allen@gmail.com','New York','6461234567', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'tomlee','654321','Tom','Lee','tomlee@yahoo.com','New York','7181234567', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'lovemusic','lovemusic','Alice','Julia','lovemusic@gmail.com','Brooklyn','7185455678', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'user','1234567','Aaron','Joe','joe123@aol.com','Queens','718378265', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'alex123','7654321','Alexander','Thomas','alextom@nyu.edu','New York','7185639825', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'westcoast','wcoast','Allen','James','westcoast@gmail.com','Los Angeles','3267548264', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'catcat','catcat','Catty','Petty','cptty@gmail.com','Los Angeles','3267149478', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
-insert into user values(null,'dogdog','doggy123','Dom','Kevin','domkevin@gmail.com','Boston','6738261749', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0);
+insert into user values(null,'aaa','123456','Peter','Allen','P.Allen@gmail.com','New York','6461234567', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'tomlee','654321','Tom','Lee','tomlee@yahoo.com','New York','7181234567', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'lovemusic','lovemusic','Alice','Julia','lovemusic@gmail.com','Brooklyn','7185455678', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'user','1234567','Aaron','Joe','joe123@aol.com','Queens','718378265', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'alex123','7654321','Alexander','Thomas','alextom@nyu.edu','New York','7185639825', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'westcoast','wcoast','Allen','James','westcoast@gmail.com','Los Angeles','3267548264', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'catcat','catcat','Catty','Petty','cptty@gmail.com','Los Angeles','3267149478', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
+insert into user values(null,'dogdog','doggy123','Dom','Kevin','domkevin@gmail.com','Boston','6738261749', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 0, "default.jpg", null);
 
 -- Arts
 insert into art values(null,'linkinpark','12345678','Linkin Park','admin@linkinpark.com','www.linkinpark.com', CURRENT_TIMESTAMP);
