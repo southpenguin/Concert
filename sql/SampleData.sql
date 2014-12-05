@@ -11,15 +11,26 @@ insert into user values(null,'dogdog','doggy123','Dom','Kevin','domkevin@gmail.c
 
 -- Arts
 USE project;
-insert into Art values(NULL,'linkinpark','12345678','Linkin Park','admin@linkinpark.com','www.linkinpark.com', current_timestamp, NULL);
-insert into Art values(NULL,'jblunt','12345678','James Blunt','jblant@gmail.com','www.jamesblunt.com', current_timestamp, NULL);
-insert into Art values(NULL,'lenka','12345678','Lenka','lenka@sina.com','www.lenkamusic.com', current_timestamp, NULL);
-insert into Art values(NULL,'eminem123','12345678','Eminem','eminem@eminem.com','www.eminem.com', current_timestamp, NULL);
-insert into Art values(NULL,'2hrose','12345678','Second Hand Roses','ershoumeigui@sina.com','http://site.douban.com/ershoumeigui/', current_timestamp, NULL);
-insert into Art values(NULL,'sum14','12345678','Sum41','sum41@myspace.com','www.sum41.com', current_timestamp, NULL);
-insert into Art values(NULL,'oasis1990','12345678','Oasis','oasis1990@gmail.com','www.oasis.com', current_timestamp, NULL);
-insert into Art values(NULL,'backdoor','12345678','Back Door','backdoor@gmail.com','www.facebbok.com/backdoor', current_timestamp, NULL);
-insert into Art values(NULL,'M5','12345678','Maroon5','maroon5@gmail.com','www.maroon', current_timestamp, NULL);
+insert into Art values(NULL,'linkinpark','12345678','Linkin Park','admin@linkinpark.com','www.linkinpark.com', defaul.png, NULL);
+insert into Art values(NULL,'jblunt','12345678','James Blunt','jblant@gmail.com','www.jamesblunt.com', defaul.png, NULL);
+insert into Art values(NULL,'lenka','12345678','Lenka','lenka@sina.com','www.lenkamusic.com', defaul.png, NULL);
+insert into Art values(NULL,'eminem123','12345678','Eminem','eminem@eminem.com','www.eminem.com', defaul.png, NULL);
+insert into Art values(NULL,'2hrose','12345678','Second Hand Roses','ershoumeigui@sina.com','http://site.douban.com/ershoumeigui/', defaul.png, NULL);
+insert into Art values(NULL,'sum14','12345678','Sum41','sum41@myspace.com','www.sum41.com', defaul.png, NULL);
+insert into Art values(NULL,'oasis1990','12345678','Oasis','oasis1990@gmail.com','www.oasis.com', defaul.png, NULL);
+insert into Art values(NULL,'backdoor','12345678','Back Door','backdoor@gmail.com','www.facebbok.com/backdoor', defaul.png, NULL);
+insert into Art values(NULL,'M5','12345678','Maroon5','maroon5@gmail.com','www.maroon', defaul.png, NULL);
+
+-- Fans
+USE project;
+insert into Fans values(9,5,'2014-01-01 15:37:29');
+insert into Fans values(9,8,'2014-01-01 15:38:29');
+insert into Fans values(9,4,'2014-01-01 15:39:29');
+insert into Fans values(9,2,'2014-10-01 15:39:29');
+insert into Fans values(9,3,'2014-10-02 15:39:29');
+insert into Fans values(1,1,'2014-11-02 15:39:29');
+insert into Fans values(1,7,'2014-11-08 15:39:29');
+insert into Fans values(2,6,'2014-11-08 15:39:29');
 
 -- Location
 use project;
