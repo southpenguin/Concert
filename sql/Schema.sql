@@ -110,6 +110,7 @@ CREATE TABLE Concert (
 	capacity int(6),
 	available int(6),
 	clink varchar(200),
+	cbio varchar(500),
 	PRIMARY KEY (cid),
 	FOREIGN KEY (location) REFERENCES Location(lid)
 );
