@@ -1,53 +1,59 @@
-<?php
-session_start();
+<?php include 'includes/Head.php';?>
 
-if (!isset($_SESSION["UID"])) {
-    header("Location:entry.php");
-} else {
-    $user = $_SESSION["UID"];
-    $username = $_SESSION["Username"];
-    $ufname = $_SESSION["FirstName"];
-}
+<title>Artists</title>
+<link rel ="stylesheet" href="css/style.css">
+<link rel ="stylesheet" href="css/artists.css">
+
+<?php include 'includes/Navigation.php';?>
+<div id="connectioncontent">
+    <div class="content">
+            
+<?php 
+    if ($stmt=$mysqli->prepare("SELECT artname, aemail, asite, alink, abio FROM Art, Fans WHERE Fans.follow = Art.aid AND fan = ? ORDER BY fantime ASC;")){
+        $stmt->bind_param("i", $uid);
+        $stmt->execute();
+        $stmt->bind_result($fartname, $faemail, $fasite, $falink, $fabio);
+        $stmt->store_result();
+        if ($stmt->num_rows >= 1){
 ?>
-
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Home Page</title>
-        <link rel ="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <div id ="navigation">
-            <div id="topcontent">
-                <div id="logo">
-                    <a href="index.php">Concert</a>
-                </div>
-
-                <div id="hometop">
-                    <ul>
-                        <li><a href = "index.php">Home</a></li>
-                        <li><a href = "artists.php">Artists</a></li>
-                        <li><a href = "concerts.php">Concerts</a></li>
-                        <li><a href = "connection.php">Connection</a></li>
-                        <li><a href = "profile.php">My Profile</a></li>
-                    </ul>
-                </div>
-            </div>
+        <ul class="following">
+            <li>You are following <?php echo $stmt->num_rows;?> artists</li>
+        </ul>
+        <ol>
+<?php
+            while ($stmt->fetch()) {
+?>
+                <li class='group'>
+                    <div class="box">
+                        <div class="pics">
+                            <a href= "">
+                                <img src="Pictures/Art/<?php echo $falink; ?>" width=250px height=250px>
+                            </a>
+                        </div>
+                        <div class="links">
+                            <a href= "" >
+                                <div class="discription">
+                                    <h5><?php echo $fabio; ?></h5>
+                                </div>
+                            </a>
+                        </div>
+                        <ul>
+                            <li><a href="
+                                <?php 
+                                if(substr($fasite, 0, 4) != "http")echo "http://".$fasite; 
+                                ?>"><?php echo $fartname; ?></a></li>
+                            <li><img src="Pictures/Logos/email.png" width=15px height=14px> <?php echo $faemail; ?></li>
+                            <li><img src="Pictures/Logos/at.png" width=10px height=10px> <?php echo substr($fasite, 0, 22); ?></li>
+                        </ul>
+                    </div>
+                </li>
+<?php 
+            }
+        }
+    }
+?>
+            </ol>
         </div>
-        <div class="center">
-            <div id="user">
-                Welcome Back, <?php echo $ufname; ?>
-            </div>
-            <div class="left">
-
-            </div>
-
-            <div class="right">
-
-            </div>
-
         </div>
     </body>
 </html>
