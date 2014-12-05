@@ -48,3 +48,11 @@ insert into Concert values(NULL,'so what', '2015-01-30 21:00:00', 40, 4, 250, 25
 insert into Concert values(NULL,'old metal back', '2015-03-30 15:00:00', 120, 1, 12000, 10293, null);
 insert into Concert values(NULL,'love braint music?', '2015-04-15 18:00:00', 90, 5, 300, 300, null);
 insert into Concert values(NULL,'just one last dance', '2015-08-31 17:45:00', 88, 8, 500, 500, null);
+
+-- Genre
+USE project;
+insert into Genre values(null,'pop');
+insert into Genre values(null,'rock');
+insert into Genre values(null,'rap');
+insert into Genre values(null,'funk');
+insert into Genre values(null,'punk');
