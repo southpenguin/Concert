@@ -56,3 +56,22 @@ insert into Genre values(null,'rock');
 insert into Genre values(null,'rap');
 insert into Genre values(null,'funk');
 insert into Genre values(null,'punk');
+
+-- SubGenre
+USE project;
+INSERT INTO SubGenre VALUES(NULL, 1, 'Traditional Pop');
+INSERT INTO SubGenre VALUES(NULL, 1, 'American Pop');
+INSERT INTO SubGenre VALUES(NULL, 1, 'Dance Pop');
+INSERT INTO SubGenre VALUES(NULL, 1, 'Electropop');
+INSERT INTO SubGenre VALUES(NULL, 1, 'Traditional Pop');
+INSERT INTO SubGenre VALUES(NULL, 2, 'Hard Rock');
+INSERT INTO SubGenre VALUES(NULL, 2, 'Country Rock');
+INSERT INTO SubGenre VALUES(NULL, 2, 'Death Rock');
+INSERT INTO SubGenre VALUES(NULL, 3, 'Jazz Rap');
+INSERT INTO SubGenre VALUES(NULL, 3, 'Pop Rap');
+INSERT INTO SubGenre VALUES(NULL, 3, 'Hip Hop');
+INSERT INTO SubGenre VALUES(NULL, 4, 'Deep Funk');
+INSERT INTO SubGenre VALUES(NULL, 4, 'Metal Funk');
+INSERT INTO SubGenre VALUES(NULL, 5, 'Hardcore Punk');
+INSERT INTO SubGenre VALUES(NULL, 5, 'Garage Punk');
+INSERT INTO SubGenre VALUES(NULL, 5, 'Pop Punk');
