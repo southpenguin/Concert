@@ -2,6 +2,19 @@ Concert
 ========
 
 The concert social website for database project.
+* 12/4/2014
+  * [```Head.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Head.php) added to encapsulate the top part of php code in ever page, of reading the user-related information into php variables, including [```connectDB.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/connectDB.php). This also means everytime the user change the page, or refresh the page, database will be updated to get the newest conditions of the current user. Put the following code on very top of every page to call the file:  
+ ```
+ <?php include 'includes/Head.php';?>
+ ``` 
+  * [```Navigation.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Navigation.php) added to further abstruct the navigation bar are of every page. After ```Head.php```, clarify ```<title>``` tag and ```<link>``` css tag ( usually 2 or 3 lines), then use the following code to call the file:
+ ```
+ <?php include 'includes/Navigation.php';?>
+ ``` 
+  * [```profile.php```](https://github.com/southpenguin/Concert/blob/master/php/profile.php) got the initial design. [```update.php```](https://github.com/southpenguin/Concert/blob/master/php/update.php) page is added for user to change their information, as well as function of profile picture upload. The related functional file is [```includes/ProfileUpdate.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/ProfileUpdate.php). When user uploading a picture, picture will be uploaded to ```Concert/Pictures/Users/``` directory, and change its name to user's username and store the format as ```username.filetype```, and value will be write into ```User.ulink``` attribute, to further call this profile picture.
+  * All php page files are updated because of the new encapsulation structure (```Head.php``` and ```Navigation.php```). [```artists.php```](https://github.com/southpenguin/Concert/blob/master/php/artists.php) has new content update, new  [```CSS/artists.css```](https://github.com/southpenguin/Concert/tree/master/php/css) file, modified from ```connection.css```. [```entry.php```](https://github.com/southpenguin/Concert/blob/master/php/entry.php) updated because of the [```update.php```](https://github.com/southpenguin/Concert/blob/master/php/update.php) file. So when user are signing up, the very front page they only need to input username and password, then it will redirect to the ```update.php``` to let the user update their information.
+  * Several sample artists pictures are used. All in ```/Pictures/Art/``` directory.
+  * Database is moved to the AWS(Amazon Web Service), using there RDS service, so that both contributors can share the same database, better to build and debug the files and data.
 * 12/3/2014
   * [```Schema.sql```](https://github.com/southpenguin/Concert/blob/master/sql/Schema.sql)update: ```ulink varchar(200)```, ```ubio varchar(500)``` are added into ```User``` table, ```alink varchar(200)```, ```abio varchar(500)``` are added into ```Art``` table, ```clink varchar(200)``` is added into ```Concert```table, to store the picture links and bio paragrahs. [```SampleData.sql```](https://github.com/southpenguin/Concert/blob/master/sql/SampleData.sql) update for those attributes.
   * Several php files update: [```connection.php```](https://github.com/southpenguin/Concert/blob/master/php/connection.php), [```profile.php```](https://github.com/southpenguin/Concert/blob/master/php/profile.php), [```includes/SignUp.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/SignUp.php), [```includes/Login.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Login.php), [```CSS/profile.css```](https://github.com/southpenguin/Concert/blob/master/php/css/profile.css).
