@@ -1,0 +1,137 @@
+#potrait {
+    width: 200px;
+    height: 200px;
+    float: left;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#profile {
+    margin-left: 250px;
+    width: 600px;
+    height: 198px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#bio ul {
+    margin-top: 20px;
+    text-align: left;
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    border: none;
+}
+
+#bio ul h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#bio ul li {
+    margin-top: 6px;
+    color: #555555;
+    font-size: 15px;
+    display: normal;
+    display: list-item;
+    list-style: none;
+}
+
+#bio #profileusername{
+    font-style: italic;
+}
+
+#bio #name{
+    color: #333333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+#biotitle {
+    position: absolute;
+    top: 95px;
+    margin-left: 280px;
+    width: 290px;
+    height: 40px;
+    border: none;
+}
+
+#biocontent{
+    position: absolute;
+    top: 135px;
+    margin-left: 280px;
+    width: 290px;
+    height: 160px;
+    border: none;
+    overflow: scroll;
+}
+
+#biotitle h4 {
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 18px;
+    color: #333333;
+    line-height: 130%;
+}
+
+#biocontent h5 {
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 15px;
+    color: #555555;
+    font-style: italic;
+    line-height: 130%;
+}
+
+#edit {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 520px;
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #090909;
+    background-color: #F4F4F4;
+    border: 1px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 0 #F8F8F8;
+    box-shadow: 0 1px 0 #F8F8F8;
+    border-radius: 3px;
+}
+
+#edit:hover{
+    border: 1px solid #969696;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px;
+}
+
+/*
+#profile {
+    width:360px;
+    height:500px;
+    float: left;
+    border: 1px solid #DDDDDD;
+}
+
+.center ul {
+    position: relative;
+    padding-top: 8px;
+    border-bottom: none;
+    list-style: none;
+}
+
+.center li {
+    color: #333333;
+    font-size: 14px;
+    list-style: none;
+}
+
+.center ul li {
+    width:280px;
+    border: 1px solid #DDDDDD;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+*/

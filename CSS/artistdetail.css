@@ -1,0 +1,278 @@
+#connectioncontent{
+    position: relative;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#profile {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    height: 370px;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#concertpic {
+    width: 320px;
+    height: 320px;
+    margin-top: 20px;
+    
+    margin-left: 20px;
+    float: left;
+    box-shadow: 6px 6px 18px #888888;
+}
+
+#bio {
+    float: left;
+}
+
+#bio ul {
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    border: none;
+}
+
+#bio ul li {
+    margin-top: 6px;
+    color: #555555;
+    font-size: 20px;
+    display: normal;
+    display: list-item;
+    list-style: none;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+#bio ul li a{
+    
+}
+
+#bio #name{
+    color: #333333;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: futura;
+}
+
+#bio #cbio{
+    margin-top: 25px;
+    margin-bottom: 15px;
+    width: 450px;
+    height: 80px;
+    overflow: scroll;
+    color: #777777;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#bio #price {
+    font-size: 16px;
+    font-family: calibri;
+}
+
+
+
+#biotitle h4 {
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 18px;
+    color: #333333;
+    line-height: 130%;
+}
+
+#biocontent h5 {
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 15px;
+    color: #555555;
+    font-style: italic;
+    line-height: 130%;
+}
+
+#rsvp {
+    margin-top: 20px;
+    width: 350px;
+    height: 58px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #090909;
+    background-color: #FFE100;
+    border: 2px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 0 #F8F8F8;
+    box-shadow: 0 1px 0 #F8F8F8;
+    border-radius: 3px;
+}
+
+#rsvp:hover{
+    background-color: #FFD100;
+    border: 2px solid #969696;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 4px;
+}
+
+#full {
+    margin-top: 10px;
+    padding-top: 2px;
+    width: 350px;
+    height: 58px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+    font-weight: bold;
+    color: #888888;
+    background-color: #F4F4F4;
+    border: 2px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 0 #F8F8F8;
+    box-shadow: 0 1px 0 #F8F8F8;
+    border-radius: 3px;
+}
+
+.content2 {
+    position: relative;
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    display: inline-block;
+}
+
+.content2 ul.following{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    text-align: right;
+}
+
+.content2 ul li{
+    display: inline;
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Helvetica Neue", "lucida grande", Arial,sans-serif;
+}
+
+.content2 ul li a{
+    text-decoration: none;
+    color: #090909;
+}
+
+.content2 ul li a:hover{
+    color: #19A3FF;
+}
+
+.content2 ol, ul {
+    list-style: none;
+}
+
+.content2 li.group{
+    width: 290px;
+    height: 330px;
+    position: relative;
+    float: left;
+    padding: 0;
+    margin: 0 10px 155px 0;
+}
+
+.content2 .box {
+    position: relative;
+    padding-top: 10px;
+    width: 290px;
+    height: 400px;
+    clear: left;
+    background: #fff;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    box-shadow: 1px 1px 7px #888888;
+}
+
+.content2 .pics {
+    position: relative;
+    width: 270px;
+    height: 180px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.content2 .group .box .pics img {
+    border-radius: 15px;
+    box-shadow: 1px 1px 4px #888888;
+}
+
+.content2 .box a {
+    text-decoration: none;
+    color: #090909;
+}
+
+.content2 .discription{
+    margin-top: 10px;
+    width: 270px;
+    height: 180px;
+    background-color: #fff;
+    opacity: 0;
+    z-index: 4;
+    position: relative;
+}
+
+.content2 .discription:hover {
+    opacity: 0.9;
+}
+
+
+.content2 .links {
+    position: relative;
+    height: 180px;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 190px;  
+}
+
+.content2 .discription h5 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    margin: 0;
+    height: 250px;
+    padding: 10px 10px 0;
+    overflow: scroll;
+}
+
+
+
+.content2 ol .box ul {
+    position: relative;
+    padding-left: 25px;
+    bottom: 180px;
+    border-bottom: none;
+    text-align: left;
+}
+
+.content2 ol .box ul li {
+    color: #333333;
+    display: list-item;
+    padding-left: 0;
+    font-size: 17px;
+    list-style: none;
+    margin-bottom: 3px;
+}
+
+.content2 ol .box ul li:hover {
+    color: #090909;
+}
+
+.content2 #follower {
+    height:270px;
+   
+}
+
+#cname {
+    font-family: futura;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
