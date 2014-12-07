@@ -46,11 +46,7 @@
                     <input id="username" class="signuptext" type="text" name="Username" placeholder="Username"><span class="required">*</span>
                     <input id="password" class="signuptext" type="password" name="Password" placeholder="Password"><span class="required">*</span>
                     <input id="repassword" class="signuptext" type="password" name="Reenter_Password" placeholder="Re-enter Password"><span class="required">*</span> 
-                    <input id="firstname" class="signuphalftext" type="text" name="FirstName" placeholder="First Name"><span class="required">*</span>
-                    <input id="lastname" class="signuphalftext" type="text" name="LastName" placeholder="Last Name"><span class="required">*</span>
-                    <input id="email" class="signuptext" type="text" name="Email" placeholder="Email"><span class="required">*</span>
-                    <input id="city" class="signuptext" type="text" name="City" placeholder="City"><span class="required">*</span>
-                    <input id="phone" class="signuptext" type="text" name="Phone" placeholder="Phone">
+                    
                     <input class="submitbutton" type="submit" name="SignUp" value="Sign Up">
                 </form> 
             </div>
