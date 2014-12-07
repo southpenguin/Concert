@@ -108,12 +108,8 @@
                                 <div id="alreadyFollow">
                                 You are currently following this person
                                 </div>
-                                
-                                <?php
-                                    }
-                                    else {
-                                        ?>
-                                <form action="includes/Follow.php" method="post">
+                                <?php } else { ?>
+                                <form action="includes/rsvp.php" method="post">
                                     <input type="hidden" name="Followee" value="<?php echo $fuid;?>">
                                     <input type="hidden" name="UID" value="<?php echo $uid;?>">
                                     <input class="submitbutton" id="connectionFollow" type="submit" name="SignUp" value="Follow">
