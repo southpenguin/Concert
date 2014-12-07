@@ -16,7 +16,7 @@
 }
 
 #bio ul {
-    margin-top: 10px;
+    margin-top: 20px;
     text-align: left;
     font-family: "lucida grande", Calibri, Arial, sans-serif;
     border: none;
@@ -29,8 +29,8 @@
 
 #bio ul li {
     margin-top: 6px;
-    color: #888888;
-    font-size: 14px;
+    color: #555555;
+    font-size: 15px;
     display: normal;
     display: list-item;
     list-style: none;
@@ -40,25 +40,70 @@
     font-style: italic;
 }
 
-#bio #reg{
+#bio #name{
     color: #333333;
-    font-size: 12px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
-#bio #lastlg{
-    color: #333333;
-    font-size: 12px;
+
+
+#biotitle {
+    position: absolute;
+    top: 95px;
+    margin-left: 280px;
+    width: 290px;
+    height: 40px;
+    border: none;
 }
 
 #biocontent{
     position: absolute;
-    top: 130px;
+    top: 135px;
     margin-left: 280px;
-    width: 300px;
+    width: 290px;
     height: 160px;
-    border: 1px solid #DDDDDD;
+    border: none;
+    overflow: scroll;
+}
+
+#biotitle h4 {
+    font-family: "lucida grande", Calibri, Arial, sans-serif;
+    font-size: 18px;
+    color: #333333;
+    line-height: 130%;
+}
+
+#biocontent h5 {
     font-family: "lucida grande", Calibri, Arial, sans-serif;
     font-size: 15px;
+    color: #555555;
+    font-style: italic;
+    line-height: 130%;
+}
+
+#edit {
+    position: absolute;
+    margin-top: -30px;
+    margin-left: 520px;
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #090909;
+    background-color: #F4F4F4;
+    border: 1px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 0 #F8F8F8;
+    box-shadow: 0 1px 0 #F8F8F8;
+    border-radius: 3px;
+}
+
+#edit:hover{
+    border: 1px solid #969696;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 2px;
 }
 
 /*

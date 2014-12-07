@@ -12,7 +12,7 @@
                     <a href="/Concert/index.php">Concert</a>
                 </div>
 
-                
+                 
             </div>
         </div>
         <div class="center">
@@ -36,14 +36,6 @@
         echo "Username can not be empty. <br>";
         $errflag = true; 
     }
-    if($firstname == ''){
-        echo "Firstname can not be empty. <br>";
-        $errflag = true;
-    }
-    if($email == ''){
-        echo "Email can not be empty. <br>";
-        $errflag = true;
-    }
     if($pw == ''){
         echo "Password can not be empty. <br>";
         $errflag = true;
@@ -52,6 +44,16 @@
         echo "Reenter your password. <br>";
         $errflag = true;
     }
+    /*
+    if($firstname == ''){
+        echo "Firstname can not be empty. <br>";
+        $errflag = true;
+    }
+    if($email == ''){
+        echo "Email can not be empty. <br>";
+        $errflag = true;
+    }
+    
     if($pw != $repw){
         echo "Enter the same password. <br>";
         $errflag = true;
@@ -60,6 +62,8 @@
         echo "Please enter the corret format of email. <br>";
         $errflag = true;
     }
+     * */
+     
     if ($stmt0 = $mysqli->query("select uid from User where username = '$username'")){
         $s = $stmt0->num_rows;
         if($s != 0){
@@ -73,7 +77,7 @@
         echo "<br>Page will be redirected to sign up page in 5 seconds.<br>";
         ?>
         <script type="text/javascript"> 
-            setTimeout(function(){document.location = "/Concert/entry.php"}, 5000);
+            setTimeout(function(){document.location = "/Concert/Entry.php"}, 5000);
         </script>
         <?php
     }  else {
@@ -105,10 +109,10 @@
             $stmt->close();
         }
         echo "You have signed up successfully. <br>"
-        . "Page will be redirected to your profile in 3 seconds.<br>";
+        . "Page will be redirected to your profile in 2 seconds.<br>";
         ?>
         <script type="text/javascript"> 
-            setTimeout(function(){document.location = "/Concert/profile.php"}, 3000);
+            setTimeout(function(){document.location = "/Concert/Update.php"}, 2000);
         </script>
         <?php
     }?>

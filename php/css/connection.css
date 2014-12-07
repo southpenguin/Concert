@@ -8,7 +8,6 @@
 .content {
     position: relative;
     width: 960px;
-    max-height: 330px;
     overflow: scroll;
     margin-left: auto;
     margin-right: auto;
@@ -19,8 +18,6 @@
 .content2 {
     position: relative;
     width: 960px;
-    height: 420px;
-    overflow: scroll;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
@@ -166,10 +163,12 @@ li.group{
     width: 140px;
     height: 35px;
     left: 10px;
+    background-color: #FFE100;
     margin-top: 10px; 
 }
 
 #connectionFollow:hover{
+    background-color: #FFD900;
     padding: 9px;
 }
 
@@ -189,3 +188,4 @@ li.group{
     box-shadow: 0 1px 0 #F8F8F8;
     border-radius: 3px;
 }
+

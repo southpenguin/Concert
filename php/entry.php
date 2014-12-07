@@ -1,6 +1,4 @@
-<?php
-    unset($_SESSION["UID"]);
-?>
+<?php unset($_SESSION["UID"]);?>
 
 <!DOCTYPE html>
 <html>

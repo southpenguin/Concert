@@ -16,7 +16,7 @@ if (!isset($_SESSION["UID"])) {
         }
         $stmt0->close();
     }
-    $mysqli->query("UPDATE User SET uscore = uscore + (CURRENT_TIMESTAMP - lastlogin)/500000 WHERE uid = '$uid'");
+    $mysqli->query("UPDATE User SET uscore = uscore + (CURRENT_TIMESTAMP - lastlogin)/5000000 WHERE uid = '$uid'");
 }
 ?>
 

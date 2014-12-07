@@ -6,15 +6,7 @@
         <link rel ="stylesheet" href="/Concert/css/style.css">
     </head>
     <body>
-        <div id ="navigation">
-            <div id="topcontent">
-                <div id="logo">
-                    <a href="/Concert/index.php">Concert</a>
-                </div>
-
-                
-            </div>
-        </div>
+        <?php include 'Navigation.php';?>
         <div class="center">
 
 
