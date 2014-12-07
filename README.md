@@ -2,7 +2,18 @@ Concert
 ========
 
 The concert social website for database project.
-
+* 12/6/2014
+  * [```Artist_Detail.php```](https://github.com/southpenguin/Concert/blob/master/php/Artist_Detail.php), [```Concert_Detail.php```](https://github.com/southpenguin/Concert/blob/master/php/Concert_Detail.php), [```Create_List.php```](https://github.com/southpenguin/Concert/blob/master/php/Create_List.php), [```List.php```](https://github.com/southpenguin/Concert/blob/master/php/List.php), [```My_Concert.php```](https://github.com/southpenguin/Concert/blob/master/php/My_Concert.php), [```My_List.php```](https://github.com/southpenguin/Concert/blob/master/php/My_List.php), [```User.php```](https://github.com/southpenguin/Concert/blob/master/php/User.php) page files were added, new ```List.php``` at the navigation bar.
+  * [```CSS/artistdetail.css](https://github.com/southpenguin/Concert/blob/master/php/css/artistdetail.css), [```CSS/concert.css](https://github.com/southpenguin/Concert/blob/master/php/css/concert.css), [```CSS/concertdetail.css](https://github.com/southpenguin/Concert/blob/master/php/css/concertdetail.css), [```CSS/createlist.css](https://github.com/southpenguin/Concert/blob/master/php/css/createlist.css), [```CSS/list.css](https://github.com/southpenguin/Concert/blob/master/php/css/list.css) CSS fils were added for the related pages.
+  * [```rsvp.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/rsvp.php), [```SubmitList.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/SubmitList.php) files were added to let the users RSVP a concert and submit a new list.
+  * All page-view files are changed to first letter capitalized, as they will be shown in the URLs.
+  * Several sample pics added to increase the view of the pages.
+  * Things we haven't done, others are pretty much done. At least functional.
+    * [ ] Genre related work
+    * [ ] Index page
+    * [ ] Footer.php (optional)
+  * Today's snapshots:
+  * 
 * 12/4/2014
   * [```Head.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/Head.php) added to encapsulate the top part of php code in ever page, of reading the user-related information into php variables, including [```connectDB.php```](https://github.com/southpenguin/Concert/blob/master/php/includes/connectDB.php). This also means everytime the user change or refresh the page, database will be updated to get the newest conditions of the current user. Put the following code on very top of every page to call the file:  
  ```
