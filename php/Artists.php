@@ -9,10 +9,10 @@
     <div class="content">
             
 <?php 
-    if ($stmt=$mysqli->prepare("SELECT artname, aemail, asite, alink, abio FROM Art, Fans WHERE Fans.follow = Art.aid AND fan = ? ORDER BY fantime ASC;")){
+    if ($stmt=$mysqli->prepare("SELECT aid, artname, aemail, asite, alink, abio FROM Art, Fans WHERE Fans.follow = Art.aid AND fan = ? ORDER BY fantime ASC;")){
         $stmt->bind_param("i", $uid);
         $stmt->execute();
-        $stmt->bind_result($fartname, $faemail, $fasite, $falink, $fabio);
+        $stmt->bind_result($aid, $fartname, $faemail, $fasite, $falink, $fabio);
         $stmt->store_result();
         if ($stmt->num_rows >= 1){
 ?>
@@ -31,7 +31,7 @@
                             </a>
                         </div>
                         <div class="links">
-                            <a href= "" >
+                            <a href= "Artist_Detail.php?Artist=<?php echo $aid; ?>" >
                                 <div class="discription">
                                     <h5><?php echo $fabio; ?></h5>
                                 </div>
@@ -43,7 +43,7 @@
                                 if(substr($fasite, 0, 4) != "http")echo "http://".$fasite; 
                                 ?>"><?php echo $fartname; ?></a></li>
                             <li><img src="Pictures/Logos/email.png" width=15px height=14px> <?php echo $faemail; ?></li>
-                            <li><img src="Pictures/Logos/at.png" width=10px height=10px> <?php echo substr($fasite, 0, 22); ?></li>
+                            <li><img src="Pictures/Logos/at.png" width=10px height=10px> <?php echo substr($fasite, 0, 21); ?></li>
                         </ul>
                     </div>
                 </li>
