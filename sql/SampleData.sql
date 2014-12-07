@@ -131,8 +131,29 @@ insert into Fans values(2,6,'2014-11-08 15:39:29');
 insert into Fans values(9,1,'2014-12-05 04:37:13');
 
 -- Lists
-insert into Lists values(6001,10005,NULL);
-insert into Lists values(6002, 10008,NULL);
+insert into Lists values(null,5,NULL);
+insert into Lists values(null,8,NULL);
+
+-- Content
+insert into Content values(4, 1);
+insert into Content values(4, 11);
+insert into Content values(4, 4);
+insert into Content values(4, 5);
+insert into Content values(5, 2);
+insert into Content values(5, 8);
+insert into Content values(5, 7);
+insert into Content values(5, 13);
+insert into Content values(5, 4);
+insert into Content values(5, 9);
+
+-- FollowList
+insert into FollowList values(4,5,'2014-10-01 18:54:39');
+insert into FollowList values(4,7,'2014-05-09 09:09:55');
+insert into FollowList values(4,8,'2014-05-31 10:18:44');
+insert into FollowList values(5,3,'2014-06-06 18:54:33');
+insert into FollowList values(5,2,'2014-08-09 14:46:12');
+insert into FollowList values(5,4,'2014-07-21 19:07:00');
+insert into FollowList values(5,6,'2014-09-18 21:21:55');
 
 -- Like
 

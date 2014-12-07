@@ -140,7 +140,7 @@ CREATE TABLE Attend (
 );
 
 CREATE TABLE Lists (
-	listid int(10),
+	listid int(10) AUTO_INCREMENT,
 	luid int(10),
 	moditime datetime,
 	PRIMARY KEY (listid),
