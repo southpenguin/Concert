@@ -33,8 +33,22 @@
 
             <input id="phone" class="signuptext" type="text" name="Phone" placeholder="Phone" 
                    value="<?php if($uphone != null) {echo $uphone;}?>">
+            
+            
             <textarea name="Description"  class="textarea" placeholder="Tell others about yourself. Write something here."><?php if($ubio != null) {echo $ubio;}?></textarea>
-            <input class="submitbutton" type="submit" name="SignUp" value="Update">
+            <?php
+            if($stmt = $mysqli->prepare("SELECT sgid, ggid, sggenre FROM SubGenre WHERE 1")){
+                $stmt->execute();
+                $stmt->bind_result($sgid, $ggid, $sggenre);
+                while ($stmt->fetch()) {?>
+            <div class="genre">
+                <input class="genreselection" type="checkbox" name="sgid[]" value="<?php echo $sgid;?>"><?php echo $sggenre; ?>
+            </div>
+                <?php }
+            }?>
+            
+            
+            <br><input class="submitbutton" type="submit" name="SignUp" value="Update">
 
     </div>
 </form> 

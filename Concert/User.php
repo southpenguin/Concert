@@ -5,6 +5,21 @@
 <link rel ="stylesheet" href="css/profile.css">
 
 <?php include 'includes/Navigation.php';?>
+
+<?php
+$userid = $_GET["User"];
+if ($stmt = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore, ulink, ubio FROM User WHERE uid = $userid;")){
+        
+        $stmt->execute();
+        $stmt->bind_result($uid, $username, $ufname, $ulname, $uemail, $ucity, $uphone, $regtime, $lastlogin, $uscore, $ulink, $ubio);
+        $stmt->store_result();
+        if ($stmt->num_rows == 1){
+            $stmt->fetch();
+        }
+        $stmt->close();
+}
+?>
+
 <div id="content">
     <div class="center">
     <div id="potrait">
@@ -23,23 +38,26 @@
                 <li>Member since: <?php echo date("m/d/Y", strtotime($regtime)); ?></li>
             </ul>
             <div id="biotitle">
-                <h4>Something about yourself:</h4>
+                <h4>Something about this user:</h4>
             </div>
             <div id="biocontent">
                 <h5><?php echo $ubio; ?></h5>
+                <?php
+                if($stmt=$mysqli->prepare("SELECT DISTINCT sggenre FROM Likes, SubGenre WHERE Likes.lsgenre = SubGenre.sgid AND Likes.luid = $uid;")){
+                    $stmt->execute();
+                    $stmt->bind_result($sggenre);
+                    $stmt->store_result();
+                    while ($stmt->fetch()) {
+                        ?>
+                        <div class="genres">
+                            <?php echo $sggenre;?>
+                        </div>
+                        <?php
+                    }
+                }
+                    ?>
             </div>
-            <div id="editinfo">
-                <form action="Update.php" method="post">
-                    <input type="hidden" name="UID" value="<?php echo $uid;?>">
-                    <input id="edit"  type="submit" name="SignUp" value="Edit">
-                </form>
-            </div>
-            <div id="editinfo2">
-                <form action="Create_List.php" method="post">
-                    <input type="hidden" name="UID" value="<?php echo $uid;?>">
-                    <input id="list"  type="submit" name="SignUp" value="Creat a list">
-                </form>
-            </div>
+            
         </div>
     </div>
     </div>

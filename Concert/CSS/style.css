@@ -194,7 +194,7 @@ a:link{
 /*End of the signup and login*/
 
 #hometop{
-    margin-left: 300px;
+    margin-left: 230px;
     margin-top:auto;
     margin-bottom: auto;
 }
@@ -206,7 +206,7 @@ a:link{
 
 #hometop ul li {
     display: inline;
-    width: 175px;
+    width: 275px;
     margin-right: 30px;
 }
 #hometop ul li a{
@@ -282,6 +282,24 @@ a:link{
     height: 130px;    
     font-size: 13px;
     margin-top: 10px;
+}
+
+.genre {
+    margin-top: 3px;
+    float: left;
+    width:170px;
+    height:20px;
+    
+    line-height: 20px;
+    vertical-align: top;
+    font-size: 13px;
+}
+
+.genreselection {
+    text-align: left;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
 }
 
 /*

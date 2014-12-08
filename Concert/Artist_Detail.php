@@ -35,7 +35,20 @@
                         <a href='<?php echo $newasite;?>'><?php echo $newasite;?></a>
                     </li>
                     <li id="cbio"><?php echo $abio; ?></li>
-                    
+                    <?php
+                if($stmt=$mysqli->prepare("SELECT DISTINCT sggenre FROM Have, SubGenre WHERE Have.hsgenre = SubGenre.sgid AND Have.haid = $aid;")){
+                    $stmt->execute();
+                    $stmt->bind_result($sggenre);
+                    $stmt->store_result();
+                    while ($stmt->fetch()) {
+                        ?>
+                        <div class="genres">
+                            <?php echo $sggenre;?>
+                        </div>
+                        <?php
+                    }
+                }
+                    ?>
                    
                 </ul>
             </div>

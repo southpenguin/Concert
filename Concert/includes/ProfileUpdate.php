@@ -6,6 +6,7 @@
     $newucity = $_POST["City"];
     $newuphone = $_POST["Phone"];
     $newubio = $_POST["Description"];
+    $sgidarray = $_POST["sgid"];
     $newulink = $ulink;
     
     $imageStorePath = "../Pictures/Users/";    //the base directory which will store the upload files;
@@ -20,6 +21,19 @@
         $stmt->bind_param("sssssss", $newufname, $newulname, $newuemail, $newucity, $newuphone, $newubio, $newulink);
         $stmt->execute();
     }
+    foreach ($sgidarray as $sgid){
+        if($stmt1=$mysqli->prepare("SELECT ggid FROM SubGenre WHERE sgid = $sgid AND ")){
+            $stmt1->execute();
+            $stmt1->bind_result($ggid);
+            $stmt1->store_result();
+            $stmt1->fetch();
+            if($stmt2=$mysqli->prepare("INSERT INTO Likes VALUES ($uid, $ggid, $sgid)")){
+                $stmt2->execute();
+            }
+        }
+        
+    }
+    
 ?>
 <script type="text/javascript"> 
     document.location = "/Concert/profile.php";

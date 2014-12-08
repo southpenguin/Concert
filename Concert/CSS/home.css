@@ -14,14 +14,6 @@
     display: inline-block;
 }
 
-.content2 {
-    position: relative;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0;
-    display: inline-block;
-}
 
 #connectioncontent ul.following{
     border-bottom: 1px solid #ddd;
@@ -51,19 +43,19 @@
 }
 
 li.group{
-    width: 290px;
-    height: 330px;
+    width: 170px;
+    height: 210px;
     position: relative;
     float: left;
     padding: 0;
-    margin: 0 10px 55px 0;
+    margin: 0 12px 85px 0;
 }
 
 .box {
     position: relative;
     padding-top: 10px;
-    width: 290px;
-    height: 330px;
+    width: 170px;
+    height: 220px;
     clear: left;
     background: #fff;
     border: 1px solid #DDDDDD;
@@ -73,28 +65,14 @@ li.group{
 
 .pics {
     position: relative;
-    width: 270px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-ol{
-    padding-left: 0;
-}
-
-.links {
-    position: relative;
-    width: 270px;
-    height: 180px;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 190px;  
-    border-radius: 15px;
-}
-
 #connectioncontent .group .box .pics img {
-    border-radius: 15px;
+    border-radius: 8px;
     box-shadow: 1px 1px 4px #888888;
 }
 
@@ -105,8 +83,8 @@ ol{
 
 .discription{
     margin-top: 10px;
-    width: 270px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     background-color: #fff;
     opacity: 0;
     z-index: 4;
@@ -115,79 +93,56 @@ ol{
 }
 
 .discription:hover {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 
-
+.links {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 160px;  
+}
 
 .discription h5 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 15px;
     margin: 0;
-    height: 160px;
-    padding: 10px 10px 0;
+    height: 130px;
+    padding: 5px 5px 0;
     overflow: scroll;
 }
 
-
+.discription .time{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 12px;
+    width: 150px;
+    position: relative;
+    margin-top: 0;
+    padding-left: 3px;
+    height: 15px;
+    bottom: 6px;
+}
 
 #connectioncontent ol .box ul {
     position: relative;
-    padding-left: 25px;
-    bottom: 170px;
+    padding-left: 15px;
+    bottom: 150px;
     border-bottom: none;
     text-align: left;
-    margin-bottom: 3px;
 }
 
 #connectioncontent ol .box ul li {
-    color: #333333;
+    color: #888888;
     display: list-item;
     padding-left: 0;
-    font-size: 16px;
+    font-size: 14px;
     list-style: none;
 }
 
-#connectioncontent ol .box ul li#join{
-    display: inline;
-}
-
-#connectioncontent ol .box ul li#price{
-    display: inline;
-}
-
-#connectioncontent ol .box ul li#cname{
-    color: #333333;
-    font-size: 20px;
-    margin-bottom: 5px;
-    font-family: futura;
-}
 #connectioncontent ol .box ul li:hover {
     color: #090909;
-}
-
-#rsvp {
-    margin-top: 10px;
-    width: 245px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #090909;
-    background-color: #FFE100;
-    border: 2px solid #C6C6C6;
-    -webkit-box-shadow: 0 1px 0 #F8F8F8;
-    box-shadow: 0 1px 0 #F8F8F8;
-    border-radius: 3px;
-}
-
-#rsvp:hover{
-    border: 2px solid #969696;
-    border-radius: 3px;
-    cursor: pointer;
-    display: inline-block;
-    background-color: #FFD900;
-    padding: 4px;
 }
 
 #follower {
@@ -199,27 +154,37 @@ ol{
     width: 140px;
     height: 35px;
     left: 10px;
+    background-color: #FFE100;
     margin-top: 10px; 
 }
 
 #connectionFollow:hover{
+    background-color: #FFD900;
     padding: 9px;
 }
 
-#full {
+#alreadyFollow {
     margin-top: 10px;
     padding-top: 2px;
-    width: 240px;
-    height: 34px;
-    line-height: 34px;
+    width: 140px;
+    height: 33px;
+    line-height: 15px;
     text-align: center;
     vertical-align: middle;
-    font-size: 15px;
+    font-size: 11px;
     font-weight: bold;
     color: #888888;
     background-color: #F4F4F4;
-    border: 2px solid #C6C6C6;
+    border: 1px solid #C6C6C6;
     -webkit-box-shadow: 0 1px 0 #F8F8F8;
     box-shadow: 0 1px 0 #F8F8F8;
     border-radius: 3px;
+}
+
+#bandname {
+    height: 35px;
+}
+
+#bands {
+    height:250px;
 }

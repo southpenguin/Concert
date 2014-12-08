@@ -18,9 +18,9 @@
             }}
             ?>
         </ul><?php 
-    if ($stmt=$mysqli->prepare("SELECT listid, uid, ufname, ulname FROM Lists, User, FollowList WHERE FollowList.flistid = Lists.listid AND Lists.luid = User.uid AND FollowList.fluid = $uid;")){
+    if ($stmt=$mysqli->prepare("SELECT listid, moditime FROM Lists WHERE luid = $uid;")){
         $stmt->execute();
-        $stmt->bind_result($listid, $adminid, $adminfname, $adminlname);
+        $stmt->bind_result($listid, $moditime);
         $stmt->store_result();
         if ($stmt->num_rows >= 1){ 
             while ($stmt->fetch()) { ?>
@@ -31,7 +31,7 @@
                 $stmt4->store_result();
                 $conertnumbers = $stmt4->num_rows;?>
                 <ul class="following">
-                <li>List made by <a href="User.php?User=<?php echo $adminid;?>"><?php echo $adminfname." ".$adminlname;?></a></li>
+                <li>List made on <?php echo $moditime;?></li>
                 </ul>
                      <?php
                 if ($conertnumbers >= 1){

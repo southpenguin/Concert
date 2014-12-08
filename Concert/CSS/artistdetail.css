@@ -276,3 +276,19 @@
     font-size: 20px;
     margin-bottom: 8px;
 }
+
+.genres {
+    float:left;
+    height: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space:nowrap;
+    background-color: #E9E9E9;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    border: 1px solid #F1F1F1;
+}

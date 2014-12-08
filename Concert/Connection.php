@@ -10,10 +10,10 @@
 <div class="content">
             
 <?php 
-    if ($stmt=$mysqli->prepare("SELECT ufname, ulname, ucity, uscore, ulink, ubio, regtime FROM User, Follow WHERE User.uid = Follow.followee AND follower = ? ORDER BY foltime ASC;")){
+    if ($stmt=$mysqli->prepare("SELECT uid, ufname, ulname, ucity, uscore, ulink, ubio, regtime FROM User, Follow WHERE User.uid = Follow.followee AND follower = ? ORDER BY foltime ASC;")){
     $stmt->bind_param("i", $uid);
     $stmt->execute();
-    $stmt->bind_result($fufname, $fulname, $fucity, $fuscore, $fulink, $fubio, $fregtime);
+    $stmt->bind_result($fuuid, $fufname, $fulname, $fucity, $fuscore, $fulink, $fubio, $fregtime);
     $stmt->store_result();
     if ($stmt->num_rows >= 1){
         ?>
@@ -33,7 +33,7 @@
                             </a>
                         </div>
                         <div class="links">
-                            <a href= "" >
+                            <a href= "User.php?User=<?php echo $fuuid;?>" >
                                 <div class="discription">
                                     <h5><?php echo $fubio; ?></h5>
                                     <em class="time">
@@ -85,7 +85,7 @@
                                 </a>
                             </div>
                             <div class="links">
-                                <a href= "" >
+                                <a href= "User.php?User=<?php echo $fuid;?>">
                                     <div class="discription">
                                         <h5><?php echo $fubio; ?></h5>
                                         <em class="time">
