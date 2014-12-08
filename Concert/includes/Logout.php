@@ -4,5 +4,5 @@
  ?>
  Page will be redirected to login page in 2 seconds.<br>
 <script type="text/javascript"> 
-    document.location = "/Concert/Entry.php";
+    document.location = "/Concert/Start.php";
 </script>

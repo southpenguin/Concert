@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 include 'includes/connectDB.php';
 
@@ -30,6 +31,16 @@ if (!isset($_SESSION["AID"])) {
             <div id="topcontent">
                 <div id="logo">
                     <a href="/Concert/index.php">Concert</a>
+                </div>
+
+                <div id="hometop">
+                    <ul>
+                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        <li></li><li></li><li></li><li></li><li></li>
+                        <li><a href = "/Concert/includes/Logout.php">Logout</a></li>
+                    </ul>
+                    
                 </div>
             </div>
         </div>

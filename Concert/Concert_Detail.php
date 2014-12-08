@@ -1,4 +1,8 @@
-<?php include 'includes/Head.php';?>
+<?php 
+    include 'includes/Head.php';
+    error_reporting(0); 
+
+?>
 
 <title>Concert Detail</title>
 <link rel ="stylesheet" href="css/style.css">
@@ -51,11 +55,15 @@
                         if ($stmt1 = $mysqli->prepare("SELECT * FROM Attend WHERE auid = $uid AND acid = $cid;")){
                             $stmt1->execute();
                             $stmt1->store_result();
-                            if ($stmt1->num_rows != 0){ ?>
+                            if ($stmt1->num_rows != 0){ 
+                                $attended = 1;
+                            ?>
                                 <div id="full">
                                 You have already RSVP'd this event
                                 </div> <?php
-                            } else { ?>
+                            } else { 
+                                $attended = 0;
+                            ?>
                                 <form action="includes/rsvp.php" method="post">
                                     <input type="hidden" name="CID" value="<?php echo $cid;?>">
                                     <input id="rsvp"  type="submit" name="rsvp" value="<?php echo "RSVP to this Concert\n".($capacity-$available)." Spots Available"; ?>">
@@ -120,6 +128,88 @@
 ?>
             </ol>
     </div>
+
+    <div class="content2">
+        <?php 
+    if ($stmt=$mysqli->prepare(
+            "SELECT DISTINCT aid, artname, aemail, asite, alink, abio "
+            . "FROM Art, Hold "
+            . "WHERE Hold.haid = Art.aid "
+            . "AND hcid = ?")){
+        $stmt->bind_param("i", $cid);
+        $stmt->execute();
+        $stmt->bind_result($faid, $fartname, $faemail, $fasite, $falink, $fabio);
+        $stmt->store_result();
+        if ($stmt->num_rows >= 1){
+?>
+        <ul class="following">
+            <li>Comments from other users</li>
+        </ul>
+        <ol>
+<?php
+
+    if($stmt = $mysqli -> prepare("SELECT auid,ufname,ulname,rate,review,reviewtime FROM Attend, User where auid = uid and acid = ?")) {
+        $stmt->bind_param("i",$cid);
+        $stmt->execute();
+        $stmt->bind_result($cuid,$fname,$lname,$rate,$review,$reviewtime);
+        $stmt->store_result();
+        if ($stmt->num_rows >= 1){
+            while($stmt->fetch()){
+                echo "name: ",$fname,'    <br>';
+                echo "rate: ",$rate,'<br>';
+                echo "review: ",$review,'<br>';
+                echo '<br>';
+            }
+        }else{echo "There is no review left here.",'<br>';}
+    }
+
+    if($_POST["submit"]){
+        if($stmt = $mysqli -> prepare("UPDATE Attend SET rate = '$_POST[rate]', review = '$_POST[review]', reviewtime = now() WHERE auid = ? AND acid = ?")) {
+            $stmt->bind_param("ii",$uid,$cid);
+            $stmt->execute();
+            echo 'success';
+        }else{echo 'failed';}
+    
+?>
+    <script type="text/javascript"> 
+            setTimeout(function(){document.location = "comment.php"}, 2000);
+        </script>   
+<?php
+    }
+    if($attended == 1){
+?>
+
+        <form action="comment.php" method="post"> 
+        <table width="405" border="0" cellpadding="1" cellspacing="1">
+            <tr>
+                <td height="25" align="left"> rate:</td>
+                <td height="25" colspan="6" align="left"><select name='rate'>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td height="25" align="left"> review:</td>
+                <td height="25" colspan="2"><textarea name="review" cols="100" rows="4" id='review'></textarea></td>
+            </tr>
+        </table>
+        <input type="submit" name="submit" value="submit" /> 
+        </form> 
+<?php
+            }
+    else{
+        echo"RVSP to leave a review",'<br>';
+    }
+        }
+    }
+?>
+            </ol>
+    </div>
+
 </div>
 </body>
 </html>
