@@ -17,6 +17,7 @@
                 <li><a href="My_List.php">My Lists</a></li><?php
             }}
             ?>
+            <li><a href="Create_List.php">Create List</a></li>
         </ul><?php 
     if ($stmt=$mysqli->prepare("SELECT listid, uid, ufname, ulname FROM Lists, User, FollowList WHERE FollowList.flistid = Lists.listid AND Lists.luid = User.uid AND FollowList.fluid = $uid;")){
         $stmt->execute();
