@@ -3,7 +3,8 @@
     include 'connectDB.php';
     $aid = $_POST["AID"];
     $cname = $_POST["ConcertName"];
-    $price = $_POST["Price"];
+    $pricenumber = $_POST["Price"];
+    $price = $pricenumber + 0.00;
     $th = $_POST["Hour"];
     $tmt = $_POST["Minute"];
     $tmon = $_POST["Month"];
@@ -22,21 +23,21 @@
         move_uploaded_file($_FILES["Image"]["tmp_name"], $imageStorePath.$newFilename);
         $newulink = $newFilename;
     }
-    if($stmt0 = $mysqli->prepare("INSERT INTO Concert (cid) VALUES (NULL) ;")){
+    else {
+        $newulink = "defalt.jpg";
+    }
+    if($stmt0 = $mysqli->prepare("INSERT INTO Concert VALUES (NULL, '$cname', '$holdtime', $price, $location, $capacity, $capacity, '$newulink', '$cbio');")){
         $stmt0->execute();
     }
-    if($stmt1 = $mysqli->prepare("SELECT cid FROM Concert WHERE cname IS NULL LIMIT 1;")){
+    if($stmt1 = $mysqli->prepare("SELECT cid FROM Concert WHERE cname = '$cname';")){
         $stmt1->execute();
         $stmt1->bind_result($cid);
         $stmt1->fetch();
-        echo $cid;
+        $stmt1->close();
     }
-    if ($stmt = $mysqli->prepare("UPDATE Concert SET cname = $cname, holdtime = $holdtime, price = $price, location = $location, capacity = $capacity, available = $capacity, clink = $newulink, cbio = $cbio WHERE cid = $cid;")){
-        
+    if($stmt = $mysqli->prepare("INSERT INTO Hold VALUES ($aid, $cid);")){
         $stmt->execute();
     }
-    
-    
 ?>
 <script type="text/javascript"> 
     document.location = "/Concert/Art_Index.php";

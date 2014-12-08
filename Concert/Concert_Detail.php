@@ -148,17 +148,35 @@
         <ol>
 <?php
 
-    if($stmt = $mysqli -> prepare("SELECT auid,ufname,ulname,rate,review,reviewtime FROM Attend, User where auid = uid and acid = ?")) {
+    if($stmt = $mysqli -> prepare("SELECT auid,ufname,ulname,rate,review,reviewtime,ulink FROM Attend, User where auid = uid and acid = ?")) {
         $stmt->bind_param("i",$cid);
         $stmt->execute();
-        $stmt->bind_result($cuid,$fname,$lname,$rate,$review,$reviewtime);
+        $stmt->bind_result($cuid,$fname,$lname,$rate,$review,$reviewtime, $fulink);
         $stmt->store_result();
-        if ($stmt->num_rows >= 1){
+        if ($stmt->num_rows >= 1){ 
             while($stmt->fetch()){
-                echo "name: ",$fname,'    <br>';
-                echo "rate: ",$rate,'<br>';
-                echo "review: ",$review,'<br>';
-                echo '<br>';
+                ?>
+            <li class='group'>
+                    <div class="box">
+                        <div class="pics">
+                            <a href= "">
+                                <img src="Pictures/Users/<?php echo $fulink; ?>" width=250px>
+                                
+                            </a>
+                        </div>
+                        <div class="links">
+                            <a href= "User.php?User=<?php echo $fuuid;?>" >
+                                <div class="discription">
+                                    <h5><?php echo $review; ?></h5>
+                                </div>
+                            </a>
+                        </div>
+                        <ul>
+                            <li><?php echo $fname." ".$lname; ?></li>
+                            <li><img src="Pictures/Logos/score.png" width=10px height=10px> Rate: <?php if ($rate == null){echo "No rate yet";}else{echo $rate;} ?></li>
+                        </ul>
+                    </div>
+                </li><?php
             }
         }else{echo "There is no review left here.",'<br>';}
     }
@@ -180,10 +198,12 @@
 ?>
 
         <form action="comment.php" method="post"> 
+            <div id ="reviewcontent">
         <table width="405" border="0" cellpadding="1" cellspacing="1">
             <tr>
                 <td height="25" align="left"> rate:</td>
-                <td height="25" colspan="6" align="left"><select name='rate'>
+                <td height="25" colspan="6" align="left">
+                    <select name='rate'>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -192,17 +212,21 @@
                     <option value="5">5</option>
                 </select></td>
             </tr>
-            <tr>
-                <td height="25" align="left"> review:</td>
-                <td height="25" colspan="2"><textarea name="review" cols="100" rows="4" id='review'></textarea></td>
-            </tr>
-        </table>
+            <input type="hidden" name="CID" value="<?php echo $cid;?>">
+            
+                <tr>
+                    <td height="25" align="left"> review:</td>
+                    <td height="25" colspan="2"><textarea name="review" cols="100" rows="4" id='review'></textarea></td>
+                </tr>
+            
+            </table>
+                </div>
         <input type="submit" name="submit" value="submit" /> 
         </form> 
 <?php
             }
     else{
-        echo"RVSP to leave a review",'<br>';
+        echo "RVSP to leave a review",'<br>';
     }
         }
     }

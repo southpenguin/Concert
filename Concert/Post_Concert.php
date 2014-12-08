@@ -41,7 +41,7 @@ if (!isset($_SESSION["AID"])) {
     <form action="includes/PostConcert.php" method="post" enctype="multipart/form-data">
     <div id = "left">
     <div id="potrait">
-        <img src="Pictures/Concert/<?php echo $alink; ?>" width="300" height="200"> 
+        <img src="Pictures/Concert/<?php echo $alink; ?>" width="300"> 
         <input id="fileChoose" type ="file" name ="Image">
     </div>
 
@@ -199,8 +199,8 @@ if (!isset($_SESSION["AID"])) {
 
             <select name="Year" id="year" value = "year">
                 <option value="0" selected="1">Year</option>
-                <option value="2014">2016</option>
-                <option value="2014">2015</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
                 <option value="2014">2014</option>
             </select>
         

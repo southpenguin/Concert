@@ -49,7 +49,12 @@
                             <div id="full">
                                 This Event is Full
                             </div>
-                            <?php } else { 
+                            <?php } else if ($holdtime < "2014-12-09 12:00:00"){?>
+                                <div id="full">
+                                    <a href="comment.php?Concert=<?php echo $cid;?>">Review</a>
+                                </div><?php 
+                            }
+                            else{ 
                                 if ($stmt1 = $mysqli->prepare("SELECT * FROM Attend WHERE auid = $uid AND acid = $cid;")){
                                     $stmt1->execute();
                                     $stmt1->store_result();

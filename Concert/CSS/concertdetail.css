@@ -265,3 +265,8 @@
     height:270px;
    
 }
+
+#reviewcontent{
+    width: 700px;
+    float: none;
+}

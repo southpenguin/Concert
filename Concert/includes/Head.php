@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'connectDB.php';
 include 'includes/connectDB.php';
 
 if (!isset($_SESSION["UID"])) {

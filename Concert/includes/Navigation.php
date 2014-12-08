@@ -1,7 +1,13 @@
 
 </head>
     <body>
-        <div id ="navigation">
+        
+        <div id ="navigation"><form action ="Search.php" method="post">
+                <div class ="search">
+                    <input type="text" name="Search" id="username" placeholder="Search">
+                    <input id="searchbutton" type="submit" name="Login" value="Search">
+                 </div>       
+            </form>
             <div id="topcontent">
                 <div id="logo">
                     <a href="/Concert/index.php">Concert</a>
@@ -20,4 +26,6 @@
                     
                 </div>
             </div>
+            
+            
         </div>
