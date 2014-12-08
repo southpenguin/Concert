@@ -1,15 +1,16 @@
 <?php
-    include 'Head.php';
-    $newufname = $_POST["FirstName"];
-    $newulname = $_POST["LastName"];
-    $newuemail = $_POST["Email"];
-    $newucity = $_POST["City"];
-    $newuphone = $_POST["Phone"];
-    $newubio = $_POST["Description"];
+    session_start();
+    include 'connectDB.php';
+    $aid = $_POST["AID"];
+    $auname = $_POST["AUname"];
+    $newartname = $_POST["ArtName"];
+    $newaemail = $_POST["Email"];
+    $newasite = $_POST["URL"];
+    $newabio = $_POST["Description"];
     $sgidarray = $_POST["sgid"];
-    $newulink = $ulink;
+    $newulink = $_POST["Link"];
     
-    $imageStorePath = "../Pictures/Users/";    //the base directory which will store the upload files;
+    $imageStorePath = "../Pictures/Art/";    //the base directory which will store the upload files;
     $oriFilename = $_FILES["Image"]["name"];
     if ($oriFilename != null){
         $imageFileType = pathinfo($oriFilename, PATHINFO_EXTENSION);
@@ -17,8 +18,8 @@
         move_uploaded_file($_FILES["Image"]["tmp_name"], $imageStorePath.$newFilename);
         $newulink = $newFilename;
     }
-    if ($stmt = $mysqli->prepare("UPDATE User SET ufname = ?, ulname = ?, uemail = ?, ucity = ?, uphone = ?, ubio = ?, ulink = ? WHERE username = '$username';")){
-        $stmt->bind_param("sssssss", $newufname, $newulname, $newuemail, $newucity, $newuphone, $newubio, $newulink);
+    if ($stmt = $mysqli->prepare("UPDATE Art SET artname = ?, aemail = ?, asite = ?, abio = ?, alink = ? WHERE auname = '$auname';")){
+        $stmt->bind_param("sssss", $newartname, $newaemail, $newasite, $newabio, $newulink);
         $stmt->execute();
     }
     foreach ($sgidarray as $sgid){
@@ -27,7 +28,7 @@
             $stmt1->bind_result($ggid);
             $stmt1->store_result();
             $stmt1->fetch();
-            if($stmt2=$mysqli->prepare("INSERT INTO Likes VALUES ($uid, $ggid, $sgid)")){
+            if($stmt2=$mysqli->prepare("INSERT INTO Have VALUES ($aid, $ggid, $sgid);")){
                 $stmt2->execute();
             }
         }
@@ -36,5 +37,5 @@
     
 ?>
 <script type="text/javascript"> 
-    document.location = "/Concert/profile.php";
+    document.location = "/Concert/Art_Index.php";
 </script>

@@ -1,9 +1,9 @@
 <?php
 session_start();
-include 'connectDB.php';
+include 'includes/connectDB.php';
 
 if (!isset($_SESSION["UID"])) {
-    header("Location:entry.php");
+    header("Location:Entry.php");
 } else {
     $uid = $_SESSION["UID"];
     if ($stmt0 = $mysqli->prepare("SELECT uid, username, ufname, ulname, uemail, ucity, uphone, regtime, lastlogin, uscore, ulink, ubio FROM User WHERE uid = $uid;")){

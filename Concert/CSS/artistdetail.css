@@ -292,3 +292,41 @@
     margin-top: 5px;
     border: 1px solid #F1F1F1;
 }
+
+.editart {
+    text-decoration: none;
+    float: left;
+    margin-top: 30px;
+    margin-left: 20px;
+    line-height: 33px;
+    vertical-align: middle;
+    text-align: center;
+    width: 160px;
+    height: 34px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #090909;
+    background-color: #FFE100;
+    border: 2px solid #C6C6C6;
+    -webkit-box-shadow: 0 1px 0 #F8F8F8;
+    box-shadow: 0 1px 0 #F8F8F8;
+    border-radius: 3px;
+}
+
+.editart a {
+    text-decoration: none;
+    color: #090909;
+}
+
+.editart:hover{
+    background-color: #FFD100;
+    border: 2px solid #969696;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    padding-top: 1px;
+}
+
+#genreblock {
+    width: 400px;
+}

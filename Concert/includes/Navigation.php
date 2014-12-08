@@ -17,9 +17,6 @@
                         <li><a href = "/Concert/Profile.php">My Profile</a></li>
                         <li><a href = "/Concert/includes/Logout.php">Logout</a></li>
                     </ul>
-                    <ul>
-                    
-                    </ul>
                     
                 </div>
             </div>

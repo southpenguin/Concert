@@ -1,6 +1,6 @@
 <?php include 'includes/Head.php';?>
 
-<title>Connection</title>
+<title>Home</title>
 <link rel ="stylesheet" href="css/style.css">
 <link rel ="stylesheet" href="css/home.css"> 
 
