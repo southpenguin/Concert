@@ -53,7 +53,9 @@
                 </ul>
             </div>
         </div>
-        </div>
+        </div><object width="420" height="315"
+data="http://www.youtube.com/v/XGSy3_Czz8k">
+</object>
     </div>
     
     <div class="content2">

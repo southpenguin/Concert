@@ -235,5 +235,7 @@
     </div>
 
 </div>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="js/jquery.gmap.min.js"></script>
 </body>
 </html>
