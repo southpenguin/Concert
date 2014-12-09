@@ -1,3 +1,14 @@
+<html>
+<body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <?php include 'includes/Head.php';?>
 
 <title>Artist Detail</title>
@@ -8,9 +19,9 @@
 
 <?php
     $aid = $_GET["Artist"];
-    if ($stmt = $mysqli->prepare("SELECT artname, aemail, asite, alink, abio FROM Art WHERE aid = $aid;")){
+    if ($stmt = $mysqli->prepare("SELECT artname, aemail, asite, alink, abio, youtube FROM Art WHERE aid = $aid;")){
         $stmt->execute();
-        $stmt->bind_result($artname, $aemail, $asite, $alink, $abio);
+        $stmt->bind_result($artname, $aemail, $asite, $alink, $abio, $youtube);
         $stmt->store_result();
         if ($stmt->num_rows == 1){
             $stmt->fetch();
@@ -53,11 +64,33 @@
                 </ul>
             </div>
         </div>
-        </div><object width="420" height="315"
-data="http://www.youtube.com/v/XGSy3_Czz8k">
-</object>
+        </div>
     </div>
-    
+
+    <div class="content2">
+        <ul class="following">
+            <li>Newest video</li>
+        </ul>
+        <iframe width="560" height="315" src="<?php echo $youtube;?>" frameborder="0" allowfullscreen></iframe> 
+    </div>
+
+    <div class="content2">
+        <ul class="following">
+            <li>Share on SNS</li>
+        </ul>
+        <ol>
+        <a class="twitter-share-button"
+            href="https://twitter.com/share">
+            Tweet
+        </a>
+        <script type="text/javascript">
+            window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script>
+
+        <div class="fb-like"></div>
+        </ol>
+        </div>
+
     <div class="content2">
         <?php 
     if ($stmt=$mysqli->prepare(

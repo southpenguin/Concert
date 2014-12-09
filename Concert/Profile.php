@@ -49,21 +49,12 @@
                     <input id="edit"  type="submit" name="SignUp" value="Edit">
                 </form>
             </div>
-            <?php
-                if($stmt=$mysqli->prepare("SELECT uscore FROM User WHERE uid = $uid;")){
-                    $stmt->execute();
-                    $stmt->bind_result($nuscore);
-                    $stmt->store_result();
-                    $stmt->fetch();
-                    if ($nuscore>=50){ ?>
-                        <div id="editinfo2">
-                            <form action="Create_List.php" method="post">
-                                <input type="hidden" name="UID" value="<?php echo $uid;?>">
-                                <input id="list"  type="submit" name="SignUp" value="Creat a list">
-                            </form>
-                        </div> <?php
-                    }
-                } ?>
+            <div id="editinfo2">
+                <form action="Create_List.php" method="post">
+                    <input type="hidden" name="UID" value="<?php echo $uid;?>">
+                    <input id="list"  type="submit" name="SignUp" value="Creat a list">
+                </form>
+            </div>
         </div>
     </div>
     </div>

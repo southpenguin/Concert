@@ -1,3 +1,24 @@
+<html class="not-ie no-js" lang="en">  
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Over+the+Rainbow|Open+Sans:300,400,400italic,600,700|Arimo|Oswald|Lato|Ubuntu' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="css/skeleton.css" media="screen" />
+    <link rel="stylesheet" href="css/style.css" media="screen" />
+    
+</head>
+<body class="color-1 h-style-1 text-1">
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_CN/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <?php 
     include 'includes/Head.php';
     error_reporting(0); 
@@ -130,6 +151,32 @@
     </div>
 
     <div class="content2">
+        <ul class="following">
+            <li>Share on SNS</li>
+        </ul>
+        <ol>
+        <a class="twitter-share-button"
+            href="https://twitter.com/share">
+            Tweet
+        </a>
+        <script type="text/javascript">
+            window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+        </script>
+
+        <div class="fb-like"></div>
+        </ol>
+    </div>
+
+    <div class="content2">
+        <ul class="Following">
+            <li>See on the map</li>
+        </ul>
+        <ol>
+            <div id="map" class="map"></div>
+        </ol>
+    </div>
+
+    <div class="content2">
         <?php 
     if ($stmt=$mysqli->prepare(
             "SELECT DISTINCT aid, artname, aemail, asite, alink, abio "
@@ -148,35 +195,17 @@
         <ol>
 <?php
 
-    if($stmt = $mysqli -> prepare("SELECT auid,ufname,ulname,rate,review,reviewtime,ulink FROM Attend, User where auid = uid and acid = ?")) {
+    if($stmt = $mysqli -> prepare("SELECT auid,ufname,ulname,rate,review,reviewtime FROM Attend, User where auid = uid and acid = ?")) {
         $stmt->bind_param("i",$cid);
         $stmt->execute();
-        $stmt->bind_result($cuid,$fname,$lname,$rate,$review,$reviewtime, $fulink);
+        $stmt->bind_result($cuid,$fname,$lname,$rate,$review,$reviewtime);
         $stmt->store_result();
-        if ($stmt->num_rows >= 1){ 
+        if ($stmt->num_rows >= 1){
             while($stmt->fetch()){
-                ?>
-            <li class='group'>
-                    <div class="box">
-                        <div class="pics">
-                            <a href= "">
-                                <img src="Pictures/Users/<?php echo $fulink; ?>" width=250px>
-                                
-                            </a>
-                        </div>
-                        <div class="links">
-                            <a href= "User.php?User=<?php echo $fuuid;?>" >
-                                <div class="discription">
-                                    <h5><?php echo $review; ?></h5>
-                                </div>
-                            </a>
-                        </div>
-                        <ul>
-                            <li><?php echo $fname." ".$lname; ?></li>
-                            <li><img src="Pictures/Logos/score.png" width=10px height=10px> Rate: <?php if ($rate == null){echo "No rate yet";}else{echo $rate;} ?></li>
-                        </ul>
-                    </div>
-                </li><?php
+                echo "name: ",$fname,'    <br>';
+                echo "rate: ",$rate,'<br>';
+                echo "review: ",$review,'<br>';
+                echo '<br>';
             }
         }else{echo "There is no review left here.",'<br>';}
     }
@@ -198,12 +227,10 @@
 ?>
 
         <form action="comment.php" method="post"> 
-            <div id ="reviewcontent">
         <table width="405" border="0" cellpadding="1" cellspacing="1">
             <tr>
                 <td height="25" align="left"> rate:</td>
-                <td height="25" colspan="6" align="left">
-                    <select name='rate'>
+                <td height="25" colspan="6" align="left"><select name='rate'>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -212,21 +239,17 @@
                     <option value="5">5</option>
                 </select></td>
             </tr>
-            <input type="hidden" name="CID" value="<?php echo $cid;?>">
-            
-                <tr>
-                    <td height="25" align="left"> review:</td>
-                    <td height="25" colspan="2"><textarea name="review" cols="100" rows="4" id='review'></textarea></td>
-                </tr>
-            
-            </table>
-                </div>
+            <tr>
+                <td height="25" align="left"> review:</td>
+                <td height="25" colspan="2"><textarea name="review" cols="100" rows="4" id='review'></textarea></td>
+            </tr>
+        </table>
         <input type="submit" name="submit" value="submit" /> 
         </form> 
 <?php
             }
     else{
-        echo "RVSP to leave a review",'<br>';
+        echo"RVSP to leave a review",'<br>';
     }
         }
     }
@@ -235,7 +258,20 @@
     </div>
 
 </div>
+
+<!-- GET JQUERY FROM THE GOOGLE APIS -->
+<script src="js/jquery.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="js/selectivizr-and-extra-selectors.min.js"></script>
+<![endif]-->
+<script src="js/respond.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.cycle.all.min.js"></script>
+<script src="js/mediaelement-and-player.min.js"></script>
+<script src="fancybox/jquery.fancybox.pack.js"></script>
 <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src="js/jquery.gmap.min.js"></script>
+<script src="js/custom.js"></script>
+
 </body>
 </html>

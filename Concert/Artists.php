@@ -1,3 +1,5 @@
+<html>
+<body>
 <?php include 'includes/Head.php';?>
 
 <title>Artists</title>
@@ -55,5 +57,7 @@
             </ol>
         </div>
         </div>
+
+        
     </body>
 </html>
